@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.5)  5 OCT 2025 11:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.5)  5 OCT 2025 11:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -362,27 +362,27 @@ Overfull \hbox (2.70044pt too wide) in paragraph at lines 40--50
 
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2] [3] [4] [5] (./Project-Aurax.aux)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2] [3] [4] [5] [6] (./Project-Aurax.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Project-Aurax.out' has not changed.
-(rerunfilecheck)             Checksum: FB5E1BD0504B52994A8A89DABB548897;2617.
+(rerunfilecheck)             Checksum: 0AE32D093AE4E3C2FA76122D5E2BDC5B;1518.
  ) 
 Here is how much of TeX's memory you used:
- 9733 strings out of 474116
- 150029 string characters out of 5743683
+ 9738 strings out of 474116
+ 149973 string characters out of 5743683
  1937187 words of memory out of 5000000
- 31945 multiletter control sequences out of 15000+600000
+ 31940 multiletter control sequences out of 15000+600000
  565694 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,397b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on Project-Aurax.pdf (5 pages, 67829 bytes).
+ 75i,10n,79p,397b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
+Output written on Project-Aurax.pdf (6 pages, 77362 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 160 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
