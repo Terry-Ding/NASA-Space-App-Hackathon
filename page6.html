@@ -1,0 +1,183 @@
+<section class="mhrms">
+    <h2>Mars Habitat Recycling-to-Manufacturing System (MHRMS)</h2>
+    <p class="subtitle">Mission-Critical Closed-Loop Resource Recovery</p>
+
+    <section class="overview">
+        <h3>System Overview</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Convert waste materials from Mars habitat operations into usable 3D printing
+                filament and manufacturing feedstock, with emphasis on CO₂ extraction byproducts.</li>
+            <li><strong>Design Philosophy:</strong> Modular, relocatable, powered by habitat electrical grid, and
+                zero-waste discharge.</li>
+        </ul>
+    </section>
+
+    <section class="mars-considerations">
+        <h3>Critical Mars-Specific Design Considerations</h3>
+
+        <h4>Waste Behavior in Mars Environment</h4>
+        <ul>
+            <li>Based on NASA Glenn Research Center analysis of waste behavior under vacuum conditions.</li>
+            <li><strong>Water Sublimation:</strong> In Mars’ near-vacuum (0.6% Earth pressure), ~20% of water sublimates
+                before waste fully freezes:
+                <ul>
+                    <li>Small items (3mm droplets): freeze in ~7 seconds</li>
+                    <li>Standard “football” waste bundle (20cm): takes ~3.4 hours to freeze</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>Implications for Recycling System</h4>
+        <ul>
+            <li>Pre-processing must handle both frozen and partially sublimated materials.</li>
+            <li>Vapor capture systems required to prevent water loss during initial processing.</li>
+            <li>Grinding chambers must be sealed to capture sublimating volatiles.</li>
+            <li>Temperature control is critical: incoming waste may be frozen solid at –153°C (overnight exposure).</li>
+        </ul>
+
+        <h4>Thermal Management on Mars</h4>
+        <p><strong>Challenge:</strong> Mars surface temperatures range from 20°C (70°F) to –153°C (–225°F).</p>
+        <ul>
+            <li><strong>Insulated processing chambers:</strong> Maintain optimal temperatures (150–1400°C, depending on
+                module).</li>
+            <li><strong>Pre-heating systems:</strong> Thaw frozen waste before processing.</li>
+            <li><strong>Waste heat recovery:</strong> Capture excess heat for habitat heating or power.</li>
+            <li><strong>Phase-change thermal buffers:</strong> Smooth out temperature fluctuations.</li>
+        </ul>
+    </section>
+
+    <section class="processing-options">
+        <h3>Alternative Waste Processing Options (NASA Research)</h3>
+
+        <div class="option">
+            <h4>Option A: Partial Processing to Mixed Gases — NASA’s “Trash-to-Gas” (TtG)</h4>
+            <p>Process waste in a primary reactor only, producing mixed gases:</p>
+            <ul>
+                <li>10% H₂, 22% CO, 68% CO₂</li>
+                <li>Usable in resistojet thrusters (134.3 sec Isp)</li>
+                <li>Requires 0.28 kg/crew-day makeup water</li>
+            </ul>
+            <p><strong>Benefits:</strong></p>
+            <ul>
+                <li>Simpler system (fewer steps)</li>
+                <li>Provides station-keeping propulsion</li>
+                <li>Lower energy demand</li>
+            </ul>
+            <p><strong>Limitations:</strong></p>
+            <ul>
+                <li>Lower-quality propellant (vs. pure O₂/CH₄)</li>
+                <li>Still requires makeup water</li>
+                <li>Limited manufacturing applications</li>
+            </ul>
+        </div>
+
+        <div class="option recommended">
+            <h4>Option B: Full Processing to High-Quality Propellants — <em>RECOMMENDED</em></h4>
+            <p>NASA’s “Trash-to-Supply Gas” (TtSG) — our baseline approach:</p>
+            <ul>
+                <li>59% O₂, 41% CH₄ (optimal rocket propellant)</li>
+                <li>Achieves 250+ sec Isp in rocket engines</li>
+                <li>Requires only 0.15 kg/crew-day makeup water (less than TtG)</li>
+            </ul>
+
+            <p><strong>Our Enhanced System extends TtSG by:</strong></p>
+            <ul>
+                <li>Adding 3D printing filament production</li>
+                <li>Integrating regolith processing (ISRU)</li>
+                <li>Creating a complete closed-loop manufacturing ecosystem</li>
+                <li>Producing solid products—not just gases</li>
+            </ul>
+
+            <p><strong>NASA-Proven Benefits:</strong></p>
+            <ul>
+                <li><strong>LEO mass savings:</strong> Every kg processed on Mars saves 3.34 kg (chemical transfer) or
+                    1.35 kg (SEP transfer) in Earth launch mass.</li>
+                <li><strong>Mission augmentation:</strong> Enables lunar lander missions, extended operations, emergency
+                    maneuvers.</li>
+                <li>For 990 kg propellant (180-day mission): saves 1,340–3,300 kg launch mass from Earth.</li>
+            </ul>
+        </div>
+
+        <div class="innovation">
+            <h4>Why Our System Goes Beyond NASA’s Approach</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>NASA TtSG (Gases Only)</th>
+                        <th>Our Integrated System (Gases + Solids + ISRU)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Produces O₂ and CH₄ for propulsion</td>
+                        <td>Processes waste into filament <strong>and</strong> propellant gases</td>
+                    </tr>
+                    <tr>
+                        <td>Vents or stores excess gases</td>
+                        <td>Combines with regolith to create metals, glass, ceramics</td>
+                    </tr>
+                    <tr>
+                        <td>Limited to propellant applications</td>
+                        <td>3D prints tools, parts, habitat components</td>
+                    </tr>
+                    <tr>
+                        <td>Supports mission extension</td>
+                        <td>Enables <strong>true self-sufficiency</strong> and permanent settlement</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Result:</strong> Achieves everything NASA’s TtSG does — <em>plus</em> enables a full
+                manufacturing economy on Mars.</p>
+        </div>
+    </section>
+
+    <section class="modules">
+        <h3>Processing Modules</h3>
+        <ol>
+            <li>
+                <strong>Carbon Processing Station</strong><br>
+                Grinding → binder preparation → mixing → extrusion → spooling
+            </li>
+            <li>
+                <strong>Polymer Recycling Station</strong><br>
+                Material prep → size reduction → drying (if needed) → melting → filtration → extrusion → cooling &
+                diameter control → quality control → spooling
+            </li>
+            <li>
+                <strong>Metal Processing Station</strong><br>
+                Shredding → melting → casting → wire drawing → quality control → spooling
+            </li>
+            <li>
+                <strong>Integrated Manufacturing Hub</strong><br>
+                Final assembly, 3D printing, CNC finishing, and product validation
+            </li>
+        </ol>
+    </section>
+
+    <section class="conclusion">
+        <h3>Conclusion</h3>
+        <p>
+            This integrated recycling-to-manufacturing system transforms Mars habitat waste—including fabrics, food
+            packaging, foam, EVA materials, aluminum structures, and carbon from CO₂ extraction—into valuable 3D
+            printing feedstock and finished products.
+        </p>
+        <p>
+            The modular design is powered by the habitat’s electrical grid and optimized for Mars conditions while
+            maintaining crew safety and environmental responsibility.
+        </p>
+        <p>
+            <strong>Key Innovation:</strong> Leveraging Mars’s unique environment (thin atmosphere, low pressure) as an
+            advantage rather than an obstacle, while processing a comprehensive range of waste materials into useful end
+            products.
+        </p>
+        <p>
+            <strong>Mission Impact:</strong> Enables long-duration Mars missions by creating a closed-loop resource
+            economy, reducing Earth dependency, and providing on-demand manufacturing capability for tools, utensils,
+            storage containers, interior habitat outfitting, and habitat expansion.
+        </p>
+        <p class="status">
+            <strong>Ready for Development:</strong> All core technologies are proven; integration and Mars-specific
+            optimization are required before deployment.
+        </p>
+    </section>
+</section>
