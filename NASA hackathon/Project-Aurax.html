@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Habitat Resource Recycling & Manufacturing System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* HEADER - FIXED VIDEO */
+        header {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            color: #fff;
+        }
+
+        header .video-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        header .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        header .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            max-width: 900px;
+            padding: 2rem;
+            background: rgba(13, 17, 23, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: #58a6ff;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 1.5rem;
+            color: #e6edf3;
+        }
+
+        header a.scroll-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #ff6f61, #ff3b2e);
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        header a.scroll-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 111, 97, 0.6);
+        }
+
+        header .bottom-nav {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 1;
+            max-width: 90%;
+        }
+
+        header .bottom-nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s, transform 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(88, 166, 255, 0.1);
+        }
+
+        header .bottom-nav a:hover {
+            color: #ff6f61;
+            transform: translateY(-3px);
+            background: rgba(255, 111, 97, 0.1);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: #21262d;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(88, 166, 255, 0.1);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 4rem 2rem;
+            border-bottom: 1px solid #30363d;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #58a6ff;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            color: #79c0ff;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #e6edf3;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* STATS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            background: #161b22;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #30363d;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: #ff6f61;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* SCENARIOS */
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .scenario-card {
+            background: linear-gradient(135deg, #161b22 0%, #1c2128 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid #30363d;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .scenario-card:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+        }
+
+        .scenario-card h3 {
+            color: #ff6f61;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .scenario-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .scenario-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .scenario-card li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #58a6ff;
+        }
+
+        /* COLLAPSIBLE */
+        .collapsible-header {
+            cursor: pointer;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #161b22 0%, #1c2128 100%);
+            border-radius: 12px;
+            border: 2px solid #30363d;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .collapsible-header:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+        }
+
+        .collapsible-header.active {
+            border-color: #58a6ff;
+            background: linear-gradient(135deg, #1c2128 0%, #21262d 100%);
+        }
+
+        .collapsible-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .collapsible-arrow {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            color: #58a6ff;
+            min-width: 30px;
+        }
+
+        .collapsible-header.active .collapsible-arrow {
+            transform: rotate(90deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            margin-bottom: 1rem;
+        }
+
+        .collapsible-content.active {
+            max-height: 5000px;
+            transition: max-height 0.6s ease-in;
+        }
+
+        .collapsible-inner {
+            padding: 1.5rem;
+            background: #0d1117;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+
+        /* BENEFITS */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #161b22 0%, #1c2128 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #30363d;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin: 1rem 0;
+        }
+
+        /* COMPLIANCE */
+        .compliance-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .compliance-item {
+            background: #161b22;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid #3fb950;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .compliance-item:before {
+            content: "✓";
+            color: #3fb950;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #161b22;
+            text-align: center;
+            padding: 2rem;
+            border-top: 2px solid #30363d;
+            color: #8b949e;
+        }
+
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .citation {
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header .bottom-nav {
+                gap: 1rem;
+                bottom: 2rem;
+            }
+
+            header .bottom-nav a {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="video-wrapper">
+            <video autoplay muted loop preload="auto" playsinline>
+                <source
+                    src="https://images-assets.nasa.gov/video/JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover/JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover~orig.mp4"
+                    type="video/mp4">
+            </video>
+        </div>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Mars Habitat Resource Recycling & Manufacturing System</h1>
+            <p>Advanced Closed-Loop Resource Recovery & In-Situ Manufacturing for Mars Habitats</p>
+            <a href="#overview" class="scroll-btn">Explore System</a>
+        </div>
+        <div class="bottom-nav">
+            <a href="#overview">Overview</a>
+            <a href="#scenarios">Challenge</a>
+            <a href="#modules">Modules</a>
+            <a href="#rovers">Rovers</a>
+            <a href="#habitat">Habitat</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#safety">Safety</a>
+            <a href="#about">About Us</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#scenarios">Challenge Solutions</a>
+        <a href="#modules">Processing Modules</a>
+        <a href="#rovers">Rover Fleet</a>
+        <a href="#habitat">Habitat Design</a>
+        <a href="#benefits">Mission Impact</a>
+        <a href="#safety">Safety & Compliance</a>
+        <a href="#about">About Us</a>
+    </nav>
+
+    <section id="overview">
+        <h2>System Overview</h2>
+        <p class="intro-text">
+            <strong>The Challenge:</strong> During a hypothetical three-year mission to Mars and back, an eight-person
+            crew would accumulate <strong>12,600 kg of inorganic waste</strong>—including packaging materials, textiles,
+            and structural materials. Transporting additional resources from Earth or sending trash back is expensive
+            and inefficient, creating a pressing need for sustainable recycling systems.
+        </p>
+        <p class="intro-text">
+            <strong>Our Solution:</strong> The MHRMS transforms Mars habitat waste into valuable manufacturing
+            feedstock, creating a sustainable closed-loop economy that reduces Earth dependency by 60-80% while enabling
+            long-duration missions and habitat expansion.
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <span class="stat-number">12,600kg</span>
+                <span class="stat-label">3-Year Mission Waste (8 crew)</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">27,375kg</span>
+                <span class="stat-label">Maximum System Capacity</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">96%</span>
+                <span class="stat-label">Direct Recycling Rate</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Total Utilization Rate</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">1,045kg</span>
+                <span class="stat-label">Total Equipment Mass</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">$126M</span>
+                <span class="stat-label">Mission Cost Savings</span>
+            </div>
+        </div>
+
+        <h3>Key Innovations</h3>
+        <p>Our system goes beyond NASA's existing Trash-to-Gas approach by producing both propellant gases AND solid
+            manufacturing feedstock. We integrate CO₂ extraction byproducts, regolith processing, and complete 3D
+            printing capabilities to create a true closed-loop manufacturing economy.</p>
+
+        <div
+            style="background: linear-gradient(135deg, #1c2128 0%, #161b22 100%); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #58a6ff;">
+            <h3 style="margin-top: 0; color: #58a6ff;">📊 Maximum System Capacity Analysis</h3>
+
+            <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">Daily Processing
+                    Capacity (Maximum Output)</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px;">
+                        <p style="color: #8b949e; font-size: 0.9rem;">Module 1 (Carbon)</p>
+                        <p style="color: #fff; font-size: 1.5rem; font-weight: bold;">10 kg/day</p>
+                    </div>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px;">
+                        <p style="color: #8b949e; font-size: 0.9rem;">Module 2 (Polymer)</p>
+                        <p style="color: #fff; font-size: 1.5rem; font-weight: bold;">8 kg/day</p>
+                    </div>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px;">
+                        <p style="color: #8b949e; font-size: 0.9rem;">Module 3 (Metal)</p>
+                        <p style="color: #fff; font-size: 1.5rem; font-weight: bold;">5 kg/day</p>
+                    </div>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px;">
+                        <p style="color: #8b949e; font-size: 0.9rem;">Module 4 (Manufacturing)</p>
+                        <p style="color: #fff; font-size: 1.5rem; font-weight: bold;">2 kg/day</p>
+                    </div>
+                </div>
+                <p
+                    style="text-align: center; font-size: 1.8rem; color: #3fb950; font-weight: bold; margin-top: 1.5rem; padding: 1rem; background: rgba(63, 185, 80, 0.1); border-radius: 6px;">
+                    Total Maximum Capacity: 25 kg/day
+                </p>
+            </div>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ff6f61;">
+                    <p style="color: #ff6f61; font-size: 1.3rem; font-weight: bold; margin-bottom: 0.5rem;">Mission
+                        Requirement</p>
+                    <p style="font-size: 2rem; color: #fff; margin: 0.5rem 0;">12,600 kg</p>
+                    <p style="color: #8b949e;">3-year mission (1,095 days)</p>
+                    <p style="margin-top: 1rem; font-size: 1.1rem;"><strong>Daily Average:</strong> 11.5 kg/day</p>
+                    <p style="color: #8b949e; font-size: 0.9rem;">Based on 8-person crew</p>
+                </div>
+
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #3fb950;">
+                    <p style="color: #3fb950; font-size: 1.3rem; font-weight: bold; margin-bottom: 0.5rem;">MHRMS
+                        Maximum Capacity</p>
+                    <p style="font-size: 2rem; color: #fff; margin: 0.5rem 0;">27,375 kg</p>
+                    <p style="color: #8b949e;">Over same 3-year period</p>
+                    <p style="margin-top: 1rem; font-size: 1.1rem;"><strong>Daily Maximum:</strong> 25 kg/day</p>
+                    <p style="color: #8b949e; font-size: 0.9rem;">All modules at peak capacity</p>
+                </div>
+
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #79c0ff;">
+                    <p style="color: #79c0ff; font-size: 1.3rem; font-weight: bold; margin-bottom: 0.5rem;">Performance
+                        Surplus</p>
+                    <p style="font-size: 2rem; color: #3fb950; margin: 0.5rem 0;">+14,775 kg</p>
+                    <p style="color: #8b949e;">Excess capacity over mission</p>
+                    <p style="margin-top: 1rem; font-size: 1.1rem;"><strong>Percentage:</strong> 217% of requirement</p>
+                    <p style="color: #8b949e; font-size: 0.9rem;">+13.5 kg/day buffer capacity</p>
+                </div>
+            </div>
+
+            <div
+                style="background: rgba(63, 185, 80, 0.1); padding: 1.5rem; border-radius: 8px; border: 2px solid #3fb950; margin-top: 1.5rem;">
+                <p style="font-size: 1.2rem; font-weight: bold; color: #3fb950; margin-bottom: 1rem;">What This Surplus
+                    Capacity Enables:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div>
+                        <p style="font-weight: bold; color: #79c0ff;">117% Buffer Capacity</p>
+                        <p style="font-size: 0.95rem;">Handle waste generation spikes, equipment maintenance downtime,
+                            and processing backlogs</p>
+                    </div>
+                    <div>
+                        <p style="font-weight: bold; color: #79c0ff;">Pre-Mission Stockpile</p>
+                        <p style="font-size: 0.95rem;">Process accumulated waste from habitat setup and early mission
+                            phases</p>
+                    </div>
+                    <div>
+                        <p style="font-weight: bold; color: #79c0ff;">Emergency Reserve</p>
+                        <p style="font-size: 0.95rem;">Rapid response to equipment failures or unexpected waste surges
+                        </p>
+                    </div>
+                    <div>
+                        <p style="font-weight: bold; color: #79c0ff;">Regolith Processing</p>
+                        <p style="font-size: 0.95rem;">Excess capacity allows simultaneous ISRU operations for
+                            construction materials</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            style="background: linear-gradient(135deg, #161b22 0%, #1c2128 100%); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #3fb950;">
+            <h3 style="margin-top: 0; color: #3fb950;">🎯 True Zero-Waste Achievement</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Direct Recycling:</strong> 96% of input waste is
+                converted into usable filament and manufacturing feedstock.</p>
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Residual Processing:</strong> The remaining 4%
+                waste (contaminated materials, processing residue) is combined with MGS-1 Martian regolith to create:
+            </p>
+            <ul style="margin-left: 2rem; font-size: 1.05rem;">
+                <li>Radiation shielding blocks</li>
+                <li>Structural ceramics</li>
+                <li>Habitat expansion materials</li>
+                <li>Construction aggregates</li>
+            </ul>
+            <p style="font-size: 1.2rem; margin-top: 1.5rem; color: #3fb950; font-weight: bold;">Result: 100% Material
+                Utilization Rate - Absolutely Zero Waste</p>
+        </div>
+    </section>
+
+    <section id="scenarios">
+        <h2>NASA Challenge Solutions</h2>
+        <p class="intro-text">
+            Our MHRMS directly addresses all three NASA Space Apps Challenge scenarios with comprehensive recycling and
+            manufacturing capabilities.
+        </p>
+
+        <div class="scenarios-grid">
+            <div class="scenario-card">
+                <h3>🏗️ Residence Renovations</h3>
+                <p><strong>Challenge:</strong> Reuse inflatable habitat frame and foam packaging</p>
+                <p><strong>Our Solution:</strong></p>
+                <ul>
+                    <li>Aluminum structures → Metal Processing Station → wire/rods for 3D printing</li>
+                    <li>Carbon fiber composites → Composite Rover separates materials → carbon filament + polymer
+                        feedstock</li>
+                    <li>Foam packaging → Polymer Recycling Station → flexible filament for gaskets and seals</li>
+                    <li>Output: Habitat expansion components, storage containers, structural elements</li>
+                </ul>
+            </div>
+
+            <div class="scenario-card">
+                <h3>🎉 Cosmic Celebrations</h3>
+                <p><strong>Challenge:</strong> Create party supplies from habitat materials</p>
+                <p><strong>Our Solution:</strong></p>
+                <ul>
+                    <li>Clothing & fabrics → Polymer Station → colorful decorative filament</li>
+                    <li>Food pouches → Sorted by material → plates, cups, utensils via 3D printing</li>
+                    <li>Washcloths & wipes → Cellulose processing → paper-like decorations</li>
+                    <li>Output: Custom party decorations, serving items, commemorative gifts</li>
+                </ul>
+            </div>
+
+            <div class="scenario-card">
+                <h3>🔬 Daring Discoveries</h3>
+                <p><strong>Challenge:</strong> Reuse CO₂ extraction equipment and carbon surplus</p>
+                <p><strong>Our Solution:</strong></p>
+                <ul>
+                    <li>Surplus carbon → Carbon Processing Station → composite filament + radiation shielding</li>
+                    <li>Filter mesh → Metal Station → recycled into new instruments</li>
+                    <li>EVA waste & bags → Polymer Station → high-strength replacement parts</li>
+                    <li>Nitrile gloves → Blended into flexible filament for seals</li>
+                    <li>Output: Scientific instruments, tool replacements, protective equipment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="modules">
+        <h2>Processing Modules</h2>
+        <p class="intro-text">Four specialized modules handle all waste streams, from carbon and polymers to metals and
+            composites, producing high-quality manufacturing feedstock.</p>
+
+        <div>
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <h3 style="margin: 0; color: #58a6ff;">Module 1: Carbon Processing Station</h3>
+                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">200 kg | 5-10 kg/day | 2-3
+                            kW</p>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Converts CO₂ extraction byproducts, activated carbon, and organic waste into composite filament
+                        and radiation shielding materials.</p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>Process:</strong> Grinding → Mixing with polymer binder → Extrusion → Spooling</p>
+                        <p><strong>Outputs:</strong> Carbon-composite filament, activated carbon filters, graphite
+                            components, radiation shielding blocks</p>
+                        <p><strong>Capacity:</strong> 5-10 kg/day composite filament</p>
+                        <p><strong>Power:</strong> 2-3 kW | <strong>Components:</strong> Ball mill (50kg), compression
+                            press (75kg), heating (25kg), mixing chamber (25kg), extrusion die (15kg), controls (10kg)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <h3 style="margin: 0; color: #58a6ff;">Module 2: Polymer Recycling Station</h3>
+                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">240 kg | 5-8 kg/day |
+                            1.5-2.5 kW</p>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Processes plastics, fabrics, EVA waste, and packaging into precision 3D printing filaments with
+                        zero microplastic release.</p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>Process:</strong> Shredding → Drying → Melting → Filtration → Extrusion → Quality
+                            Control → Spooling</p>
+                        <p><strong>Outputs:</strong> PE, PP, EVA, Polyester, Nylon filaments (±0.05mm tolerance)</p>
+                        <p><strong>Capacity:</strong> 5-8 kg/day plastic filament</p>
+                        <p><strong>Power:</strong> 1.5-2.5 kW | <strong>Components:</strong> Shredder w/ HEPA (80kg),
+                            heating chamber (60kg), extruder (45kg), sensors (8kg), vapor capture (35kg), spooler (12kg)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <h3 style="margin: 0; color: #58a6ff;">Module 3: Metal Processing Station</h3>
+                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">380 kg | 3-5 kg/day | 3-7
+                            kW</p>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>Recycles metal waste from tools, structures, and electronics into wire, powder, and cast
+                        components.</p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>Process:</strong> Shredding → Melting → Casting → Wire Drawing → Quality Control</p>
+                        <p><strong>Outputs:</strong> Aluminum, steel, copper wire (1.75-2.85mm), metal powders, cast
+                            parts</p>
+                        <p><strong>Capacity:</strong> 3-5 kg/day metal products</p>
+                        <p><strong>Power:</strong> 3-7 kW | <strong>Components:</strong> Metal shredder (100kg),
+                            induction furnace (150kg), wire dies (40kg), casting molds (30kg), cooling system (25kg),
+                            atomizer optional (35kg)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <h3 style="margin: 0; color: #58a6ff;">Module 4: Integrated Manufacturing Hub</h3>
+                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">225 kg | 0.5-2 kg/day |
+                            0.5-2 kW</p>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p>3D prints finished products using feedstock from Modules 1-3, with CNC finishing for precision
+                        parts.</p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>Capabilities:</strong> FDM printing (plastic/composite/metal), direct pellet
+                            extrusion, CNC machining, post-processing</p>
+                        <p><strong>Outputs:</strong> Tools, utensils, storage containers, habitat components, life
+                            support parts, scientific instruments</p>
+                        <p><strong>Capacity:</strong> 0.5-2 kg/day finished parts</p>
+                        <p><strong>Power:</strong> 0.5-2 kW | <strong>Components:</strong> FDM plastic printer (35kg),
+                            metal FDM printer (55kg), pellet extruder (40kg), CNC station (60kg), testing equipment
+                            (20kg), post-processing (15kg)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            style="background: #161b22; padding: 1.5rem; border-radius: 10px; margin-top: 2rem; border: 2px solid #58a6ff;">
+            <p style="margin: 0; font-size: 1.1rem;"><strong>Total MHRMS Processing Equipment Mass:</strong> 1,045 kg
+                (all modules combined) | <strong>Daily Combined Output:</strong> 13.5-25 kg processed materials</p>
+        </div>
+    </section>
+
+    <section id="rovers">
+        <h2>Autonomous Rover Fleet</h2>
+        <p class="intro-text">Seven specialized autonomous rovers collect, sort, and transport materials to MHRMS
+            modules with minimal crew intervention.</p>
+
+        <div
+            style="background: #161b22; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; border: 2px solid #58a6ff;">
+            <h3 style="margin-top: 0; color: #58a6ff;">Standard Electronics Compartment (All Rovers)</h3>
+            <p style="margin-bottom: 1rem;">Modular "brain box" shared across entire fleet for simplified maintenance
+                and repairs:</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Power System</p>
+                    <p style="font-size: 0.95rem;">Li-ion batteries (10-20 kWh), hot-dock charging interface,
+                        overcurrent protection</p>
+                </div>
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Control System</p>
+                    <p style="font-size: 0.95rem;">Edge AI CPU, real-time OS, motor controllers, MHRMS software
+                        integration</p>
+                </div>
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Communication</p>
+                    <p style="font-size: 0.95rem;">UHF/X-band relay, inter-rover Wi-Fi mesh, orbital localization</p>
+                </div>
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Sensors</p>
+                    <p style="font-size: 0.95rem;">Visual/IR cameras, LiDAR navigation, material-specific detectors,
+                        environmental monitors</p>
+                </div>
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Safety</p>
+                    <p style="font-size: 0.95rem;">E-stop, watchdog timer, thermal insulation, emergency beacon</p>
+                </div>
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Docking</p>
+                    <p style="font-size: 0.95rem;">Mechanical latch, pogo-pin connectors, vacuum seal, automated
+                        alignment</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <div style="color: #ff6f61; font-size: 1.3rem; font-weight: bold; margin: 0;">1. Carbon
+                            Collector Rover</div>
+                        <div style="color: #8b949e; font-style: italic; font-size: 0.9rem; margin: 0;">"Soot & Dust
+                            Harvester" | 90-130 kg</div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>Purpose:</strong> Harvest carbon dust, spent activated carbon, CO₂ extraction byproducts,
+                        organic waste</p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                        <p><strong>Collection System:</strong> Front vacuum/blower with cyclone separator, HEPA
+                            filtration, sealed 20-40 kg carbon hopper</p>
+                        <p><strong>Autonomy:</strong> LiDAR, stereo cameras, optical dust sensors, AI pattern
+                            recognition</p>
+                        <p><strong>Operations:</strong> Daily 6-hour collection runs with vacuum-tight docking to Module
+                            1</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <div style="color: #ff6f61; font-size: 1.3rem; font-weight: bold; margin: 0;">2. Polymer
+                            Collector Rover</div>
+                        <div style="color: #8b949e; font-style: italic; font-size: 0.9rem; margin: 0;">"Sorter &
+                            Compactor" | 120-180 kg</div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>Purpose:</strong> Collect and pre-sort plastics, fabrics, EVA waste, food packaging</p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                        <p><strong>Collection System:</strong> 3-5 modular sealed compartments, onboard shredder,
+                            compactor (40-80 kg capacity)</p>
+                        <p><strong>Sorting Intelligence:</strong> IR spectrometer for polymer identification, AI visual
+                            sorting</p>
+                        <p><strong>Operations:</strong> 12-hour patrol cycles with quick-release bin ejector to Module 2
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <div style="color: #ff6f61; font-size: 1.3rem; font-weight: bold; margin: 0;">3. Metal Collector
+                            Rover</div>
+                        <div style="color: #8b949e; font-style: italic; font-size: 0.9rem; margin: 0;">"Mag-Grab" |
+                            140-200 kg</div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>Purpose:</strong> Collect ferrous/non-ferrous metals, broken tools, structural components
+                    </p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                        <p><strong>Collection System:</strong> Front electromagnetic arm (3 kW), separated trays for
+                            aluminum/steel/copper (30-80 kg capacity)</p>
+                        <p><strong>Detection Systems:</strong> Metal detectors for buried components, eddy-current
+                            sensor for non-ferrous metals</p>
+                        <p><strong>Operations:</strong> 4-hour sweeps twice daily with sliding tray transfer to Module 3
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <div style="color: #ff6f61; font-size: 1.3rem; font-weight: bold; margin: 0;">4. Composite Rover
+                        </div>
+                        <div style="color: #8b949e; font-style: italic; font-size: 0.9rem; margin: 0;">"Separator" |
+                            130-170 kg</div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>Purpose:</strong> Delaminate multi-layer composites, separate adhesive assemblies</p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                        <p><strong>Processing System:</strong> Thermal pre-treatment bed, oscillating shear blades,
+                            modular bins (20-50 kg capacity)</p>
+                        <p><strong>Analysis:</strong> Hyperspectral/IR imaging, resin vs. fiber detection, AI routing to
+                            correct modules</p>
+                        <p><strong>Operations:</strong> Weekly collection with on-site preliminary separation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <div style="color: #ff6f61; font-size: 1.3rem; font-weight: bold; margin: 0;">5. Regolith/ISRU
+                            Rover</div>
+                        <div style="color: #8b949e; font-style: italic; font-size: 0.9rem; margin: 0;">"Digger" |
+                            600-1500+ kg</div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>Purpose:</strong> Excavate and grade Martian regolith for composites, shielding, ISRU</p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                        <p><strong>Excavation System:</strong> Front bucket excavator, dust-sealed hopper with onboard
+                            sieving (200-500 kg capacity)</p>
+                        <p><strong>Analysis:</strong> Ground-penetrating radar, subsurface heterogeneity mapping</p>
+                        <p><strong>Operations:</strong> On-demand regolith supply with precision dosing for Modules 1 &
+                            4</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <div style="color: #ff6f61; font-size: 1.3rem; font-weight: bold; margin: 0;">6.
+                            Storage/Transport Rover</div>
+                        <div style="color: #8b949e; font-style: italic; font-size: 0.9rem; margin: 0;">"Hauler" |
+                            200-400 kg</div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>Purpose:</strong> Transport processed materials, spools, ingots between modules and
+                        habitat</p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                        <p><strong>Payload System:</strong> Modular quick-swap compartments (100-400 kg capacity),
+                            active thermal control</p>
+                        <p><strong>Intelligence:</strong> Route optimization, obstacle avoidance, RFID inventory
+                            scanning</p>
+                        <p><strong>Operations:</strong> Continuous inter-module transport with standard docking
+                            interface</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <div class="collapsible-title">
+                    <span class="collapsible-arrow">▶</span>
+                    <div>
+                        <div style="color: #ff6f61; font-size: 1.3rem; font-weight: bold; margin: 0;">7.
+                            Maintenance/Inspection Rover</div>
+                        <div style="color: #8b949e; font-style: italic; font-size: 0.9rem; margin: 0;">"Medic" | 80-120
+                            kg</div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-content">
+                <div class="collapsible-inner">
+                    <p><strong>Purpose:</strong> Inspect MHRMS modules, perform repairs, replace consumables</p>
+                    <div style="background: #161b22; padding: 1rem; border-radius: 6px; margin-top: 1rem;">
+                        <p><strong>Tool Systems:</strong> 6-7 DOF manipulator arm with interchangeable end-effectors,
+                            tool chest with socket set/cutters/spares</p>
+                        <p><strong>Diagnostic Sensors:</strong> High-res cameras, thermal imaging, vibration sensors,
+                            predictive maintenance AI</p>
+                        <p><strong>Operations:</strong> Continuous system monitoring, scheduled preventive maintenance,
+                            emergency repair response</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            style="background: linear-gradient(135deg, #161b22 0%, #1c2128 100%); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #3fb950;">
+            <h3 style="margin-top: 0; color: #3fb950;">Fleet Integration & Workflow</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">1.
+                        Collection Phase</p>
+                    <p style="font-size: 0.95rem;">Rovers autonomously gather assigned materials, perform pre-sorting,
+                        and communicate inventory status to MHRMS control system</p>
+                </div>
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">2. Transport
+                        Phase</p>
+                    <p style="font-size: 0.95rem;">Storage/Transport rovers deliver materials to correct MHRMS module
+                        inputs with sealed, contamination-free transfer</p>
+                </div>
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">3.
+                        Processing Phase</p>
+                    <p style="font-size: 0.95rem;">MHRMS modules handle recycling, filament production, and
+                        manufacturing while rovers continue collection operations</p>
+                </div>
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">4.
+                        Maintenance Phase</p>
+                    <p style="font-size: 0.95rem;">Maintenance rover monitors system health, performs repairs, and
+                        ensures continuous operation with minimal crew involvement</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(63, 185, 80, 0.1); border-radius: 8px;">
+                <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 1rem;">Key Fleet Advantages:</p>
+                <ul style="margin-left: 1.5rem; font-size: 0.95rem;">
+                    <li>Fully modular design allows fleet expansion and redeployment</li>
+                    <li>Standardized electronics enable rapid repairs and component swapping</li>
+                    <li>Closed storage prevents material loss and contamination</li>
+                    <li>Inter-rover mesh communication enables coordinated operations</li>
+                    <li>Grid-powered docking eliminates solar panel dependency</li>
+                    <li>AI autonomy reduces crew workload to 2-3 hours daily monitoring</li>
+                    <li>Sealed transfer systems maintain zero-waste philosophy</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <h2>Mission Impact & Benefits</h2>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <h3>Resource Independence</h3>
+                <p>Reduces Earth resupply needs by 60-80%, enabling extended missions and habitat expansion without
+                    additional launches.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Economic Savings</h3>
+                <p>$1.15M monthly savings per 115 kg recycled. System pays for itself in 2-3 months of operation.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">♻️</div>
+                <h3>True Zero-Waste</h3>
+                <p>96% direct recycling + 4% residual waste combined with MGS-1 regolith = 100% material utilization.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🔧</div>
+                <h3>On-Demand Manufacturing</h3>
+                <p>Create custom tools, replacement parts, and habitat components as needed without waiting for Earth
+                    resupply.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🌍</div>
+                <h3>CO₂ Utilization</h3>
+                <p>Valuable use for extraction byproducts closes carbon loop in life support and reduces carbon waste
+                    accumulation.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <h3>Scalability</h3>
+                <p>Modular design allows expansion for colony-scale operations and integration with future technologies.
+                </p>
+            </div>
+        </div>
+
+        <h3>Beyond NASA's Approach</h3>
+        <p>While NASA's Trash-to-Supply Gas (TtSG) system produces O₂ and CH₄ for propulsion, our MHRMS extends this
+            capability by also producing solid manufacturing feedstock, enabling true self-sufficiency through complete
+            closed-loop manufacturing rather than just propellant production.</p>
+
+        <div
+            style="background: #161b22; padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid #ff6f61;">
+            <h3 style="margin-top: 0; color: #ff6f61;">⚡ Complete Resource Utilization Analysis</h3>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💡 Energy
+                        Consumption</p>
+                    <p><strong>Peak Power Draw:</strong> 14.5 kW (all modules)</p>
+                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Module 1: 3 kW | Module 2: 2.5
+                        kW<br>Module 3: 7 kW | Module 4: 2 kW</p>
+                    <p style="margin-top: 1rem;"><strong>Daily Energy:</strong> ~200 kWh</p>
+                    <p style="margin-top: 1rem;"><strong>Per kg Processed:</strong> 8 kWh/kg</p>
+                </div>
+
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💧 Water
+                        Consumption</p>
+                    <p><strong>Daily Water Use:</strong> 5-8 liters</p>
+                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Only for polymer/fabric drying
+                        (Module 2)</p>
+                    <p style="margin-top: 1rem;"><strong>Closed-Loop System:</strong> 95% recaptured</p>
+                    <p style="margin-top: 1rem;"><strong>Mission Total:</strong> 274-438 L (3 years)</p>
+                </div>
+
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">👥 Crew Time
+                    </p>
+                    <p><strong>Daily Operation:</strong> 2-3 hours</p>
+                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Loading, monitoring, quality
+                        control</p>
+                    <p style="margin-top: 1rem;"><strong>Weekly Maintenance:</strong> 4-6 hours</p>
+                    <p style="margin-top: 1rem;"><strong>Total Mission Hours:</strong> ~3,500 hours</p>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: #0d1117; border-radius: 8px; border-left: 4px solid #3fb950;">
+                <p style="font-size: 1.3rem; font-weight: bold; color: #3fb950; margin-bottom: 1rem;">🎯 Mission
+                    Performance Summary</p>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Metric</td>
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Mission Requirement</td>
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">MHRMS Capacity</td>
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Advantage</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Total Waste</td>
+                        <td style="padding: 0.75rem;">12,600 kg</td>
+                        <td style="padding: 0.75rem; color: #3fb950; font-weight: bold;">27,375 kg max</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">+117% surplus</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Energy per kg</td>
+                        <td style="padding: 0.75rem;">Minimize</td>
+                        <td style="padding: 0.75rem;">8 kWh/kg</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Highly efficient</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Water use</td>
+                        <td style="padding: 0.75rem;">Minimize</td>
+                        <td style="padding: 0.75rem;">274-438 L total</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Minimal</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Crew time/day</td>
+                        <td style="padding: 0.75rem;">Minimize</td>
+                        <td style="padding: 0.75rem;">2-3 hours</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Highly automated</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem;">Material recovery</td>
+                        <td style="padding: 0.75rem;">Maximize</td>
+                        <td style="padding: 0.75rem; color: #3fb950; font-weight: bold;">100%</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Zero waste</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 111, 97, 0.1); border-radius: 8px; border: 2px solid #ff6f61;">
+                <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💰 Economic & Mission Value</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Launch Cost Savings:</strong> $126M
+                    (12,600 kg × $10,000/kg avoided)</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>System ROI:</strong> 1,045 kg equipment
+                    cost vs 12,600 kg savings = 12× return</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Energy Efficiency:</strong> Processing 1
+                    kg waste on Mars uses 0.01% the energy of launching 1 kg from Earth</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Water Efficiency:</strong> Mission water
+                    use (438 L max) equals what crew drinks in 55 days</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Crew Productivity:</strong> 3,500 hours
+                    total = 0.3% of mission crew-hours for 100% waste elimination</p>
+                <p
+                    style="font-size: 1.15rem; margin-top: 1.5rem; padding: 1rem; background: #0d1117; border-radius: 6px; color: #3fb950; font-weight: bold;">
+                    Bottom Line: MHRMS delivers 217% processing capacity with minimal resource consumption, achieving
+                    complete waste elimination while enabling on-demand manufacturing—all with a 12× return on equipment
+                    investment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="safety">
+        <h2>Safety & Compliance</h2>
+        <p class="intro-text">Comprehensive safety systems ensure crew protection and environmental responsibility
+            throughout all operations.</p>
+
+        <div class="compliance-grid">
+            <div class="compliance-item">No incineration or burning - All thermal processing in controlled,
+                non-combustion environment</div>
+            <div class="compliance-item">No toxic emissions - Closed-loop vapor capture with activated carbon filtration
+            </div>
+            <div class="compliance-item">No PFAS generation - System avoids all fluoropolymers and fluorinated compounds
+            </div>
+            <div class="compliance-item">No microplastic release - Sealed grinding with HEPA filtration captures all
+                particles</div>
+            <div class="compliance-item">No wastewater discharge - Dry processing only with closed-loop drying system
+            </div>
+            <div class="compliance-item">Safe for Martian environment - All processes contained with no surface
+                contamination</div>
+            <div class="compliance-item">Minimal crew time - 2-3 hours daily operation with automated processes</div>
+            <div class="compliance-item">Grid-powered efficiency - Uses habitat electrical supply with no separate power
+                generation</div>
+            <div class="compliance-item">Water conservation - Minimal water use with closed-loop recycling</div>
+            <div class="compliance-item">Redundant safety systems - Emergency shutoffs, interlocked access, continuous
+                monitoring</div>
+        </div>
+
+        <h3>Mars Environment Adaptations</h3>
+        <p>Our system leverages Mars' unique conditions as advantages: thin atmosphere prevents oxidation during metal
+            melting, efficient heat rejection in low-pressure environment, and 24.6-hour sols allow extended processing
+            cycles. All modules include thermal management for -153°C to 20°C temperature swings, sealed chambers to
+            capture sublimating volatiles, and dust mitigation systems.</p>
+    </section>
+    <section id="habitat">
+        <h2>Advanced Modular MHRMS Habitat</h2>
+        <p class="intro-text">
+            A dedicated, fully controlled habitat for material collection, recycling, processing, manufacturing, and
+            fleet operations on Mars—designed for high operational efficiency, minimal crew involvement, and unlimited
+            expansion potential.
+        </p>
+
+        <div
+            style="background: linear-gradient(135deg, #161b22 0%, #1c2128 100%); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid #58a6ff;">
+            <h3 style="margin-top: 0; color: #58a6ff;">🏗️ Design Philosophy</h3>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Fully Modular</p>
+                    <p style="font-size: 0.95rem;">Relocatable design with expandable docking rings</p>
+                </div>
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Grid-Powered</p>
+                    <p style="font-size: 0.95rem;">Integrated habitat electrical system with redundancy</p>
+                </div>
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Closed-Loop Systems</p>
+                    <p style="font-size: 0.95rem;">Air, water, temperature, and dust fully controlled</p>
+                </div>
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Automated Operations</p>
+                    <p style="font-size: 0.95rem;">Remote monitoring with minimal crew intervention</p>
+                </div>
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Future-Proof</p>
+                    <p style="font-size: 0.95rem;">Ready for new modules and technologies</p>
+                </div>
+                <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
+                    <p style="color: #79c0ff; font-weight: bold;">Low Maintenance</p>
+                    <p style="font-size: 0.95rem;">Robotic systems reduce crew workload</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Structural Layout</h3>
+        <div
+            style="background: #161b22; padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid #3fb950;">
+            <h3 style="margin-top: 0; color: #3fb950;">Central Spine Module</h3>
+            <p style="font-size: 1.05rem; margin-bottom: 1rem;">The backbone of the entire habitat system, connecting
+                all operational zones:</p>
+            <ul style="margin-left: 2rem; font-size: 1rem;">
+                <li>Main access corridor and control hub</li>
+                <li>Central control servers and environmental monitoring</li>
+                <li>Power distribution to all modules</li>
+                <li>Acts as structural backbone connecting all pods</li>
+                <li>Pressurized aluminum-lithium alloy shell with multilayer insulation</li>
+            </ul>
+        </div>
+
+        <h3>Habitat Zones</h3>
+        <div
+            style="background: #0d1117; padding: 1.5rem; border-radius: 8px; border: 2px solid #58a6ff; margin: 2rem 0; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; min-width: 800px;">
+                <tr style="background: #161b22; border-bottom: 2px solid #30363d;">
+                    <th style="padding: 1rem; text-align: left; color: #79c0ff; font-size: 1.1rem;">Zone</th>
+                    <th style="padding: 1rem; text-align: left; color: #79c0ff; font-size: 1.1rem;">Purpose</th>
+                    <th style="padding: 1rem; text-align: left; color: #79c0ff; font-size: 1.1rem;">Key Features</th>
+                </tr>
+                <tr style="border-bottom: 1px solid #30363d;">
+                    <td style="padding: 1rem; color: #ff6f61; font-weight: bold;">MHRMS Processing Pods</td>
+                    <td style="padding: 1rem;">Modules 1-4 operations</td>
+                    <td style="padding: 1rem; font-size: 0.95rem;">Negative-pressure grinding, high-temp zones
+                        (150-1400°C), filtration & vapor capture, automated material transfer</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #30363d;">
+                    <td style="padding: 1rem; color: #ff6f61; font-weight: bold;">Rover Docking Bays</td>
+                    <td style="padding: 1rem;">Fleet operations & maintenance</td>
+                    <td style="padding: 1rem; font-size: 0.95rem;">1 bay per rover type, automated charging & data sync,
+                        robotic maintenance arms, sealed transfer ports</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #30363d;">
+                    <td style="padding: 1rem; color: #ff6f61; font-weight: bold;">Storage & Sorting Pods</td>
+                    <td style="padding: 1rem;">Pre-processing & inventory</td>
+                    <td style="padding: 1rem; font-size: 0.95rem;">Category-based storage (C/P/M/F/Regolith), climate
+                        control, automated conveyors, robotic handling</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #30363d;">
+                    <td style="padding: 1rem; color: #ff6f61; font-weight: bold;">Manufacturing Pod</td>
+                    <td style="padding: 1rem;">3D printing & finishing</td>
+                    <td style="padding: 1rem; font-size: 0.95rem;">FDM printing (plastic/composite/metal), CNC
+                        machining, quality control, storage racks</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; color: #ff6f61; font-weight: bold;">Expansion Rings</td>
+                    <td style="padding: 1rem;">Future growth</td>
+                    <td style="padding: 1rem; font-size: 0.95rem;">Empty docking ports, prewired power & environmental
+                        interfaces, robotics-ready</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>Environmental Control Systems</h3>
+        <div class="scenarios-grid">
+            <div class="scenario-card">
+                <h3>🌬️ Atmosphere Control</h3>
+                <ul>
+                    <li>Pressurized to 101 kPa (Earth sea level)</li>
+                    <li>Oxygen/Nitrogen mix maintained</li>
+                    <li>CO₂ scrubbers linked to Module 1</li>
+                    <li>VOC and HEPA filtration for microplastics/dust</li>
+                    <li>Airlocks with dust mitigation for rover entry/exit</li>
+                </ul>
+            </div>
+
+            <div class="scenario-card">
+                <h3>🔥 Thermal & Energy</h3>
+                <ul>
+                    <li>Habitat insulation maintains 20°C ±5°C</li>
+                    <li>Local heating/cooling: 150-1400°C processing zones</li>
+                    <li>Waste heat recycled for module preheating</li>
+                    <li>Phase-change thermal buffers for Mars sol cycles</li>
+                    <li>Grid-powered with pod-level redundancy</li>
+                </ul>
+            </div>
+
+            <div class="scenario-card">
+                <h3>💧 Water & Humidity</h3>
+                <ul>
+                    <li>Closed-loop water system for drying operations</li>
+                    <li>Minimal consumption with vapor recapture</li>
+                    <li>Humidity maintained at 40-50% in sensitive zones</li>
+                    <li>95% water recovery rate</li>
+                    <li>Integrated with habitat life support</li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            style="background: linear-gradient(135deg, #1c2128 0%, #161b22 100%); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #ff6f61;">
+            <h3 style="margin-top: 0; color: #ff6f61;">🤖 Automated Workflow</h3>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #58a6ff;">
+                    <p style="color: #58a6ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">1.
+                        Collection</p>
+                    <p style="font-size: 0.95rem;">Rovers gather materials → dock → deposit into storage pods via sealed
+                        transfer ports</p>
+                </div>
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #79c0ff;">
+                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">2. Sorting
+                    </p>
+                    <p style="font-size: 0.95rem;">Automated conveyors/robotic arms sort by category → pre-processing:
+                        grinding, drying, shredding</p>
+                </div>
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #3fb950;">
+                    <p style="color: #3fb950; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">3.
+                        Processing</p>
+                    <p style="font-size: 0.95rem;">Modules 1-3 produce filament/powder → quality control → storage for
+                        manufacturing</p>
+                </div>
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ff6f61;">
+                    <p style="color: #ff6f61; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">4.
+                        Manufacturing</p>
+                    <p style="font-size: 0.95rem;">Module 4 prints finished products → CNC finishing → quality
+                        inspection → deployment</p>
+                </div>
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ffa657;">
+                    <p style="color: #ffa657; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">5.
+                        Maintenance</p>
+                    <p style="font-size: 0.95rem;">Inspection rovers monitor system health → perform repairs → automated
+                        anomaly detection</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Safety & Redundancy Systems</h3>
+        <div class="compliance-grid">
+            <div class="compliance-item">Multiple grid feeds with automatic failover for uninterrupted operations</div>
+            <div class="compliance-item">Thermal alarms and interlocked access for high-temperature zones</div>
+            <div class="compliance-item">HEPA & activated carbon filtration prevents dust/particulate contamination
+            </div>
+            <div class="compliance-item">CO₂ suppression systems for metal processing and electrical fire hazards</div>
+            <div class="compliance-item">Automated system alerts crew for anomalies requiring minimal intervention</div>
+            <div class="compliance-item">Robotic module swaps and inspection reduce downtime and crew exposure</div>
+        </div>
+
+        <div
+            style="background: rgba(88, 166, 255, 0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #58a6ff;">
+            <h3 style="color: #58a6ff; margin-bottom: 1rem;">🚀 Future-Ready Features</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div>
+                    <p style="font-weight: bold; color: #79c0ff; font-size: 1.05rem; margin-bottom: 0.5rem;">Modular
+                        Expansion</p>
+                    <p style="font-size: 0.95rem;">Prewired docking rings ready for new MHRMS modules, rover types, or
+                        advanced manufacturing technologies</p>
+                </div>
+                <div>
+                    <p style="font-weight: bold; color: #79c0ff; font-size: 1.05rem; margin-bottom: 0.5rem;">Advanced
+                        Manufacturing</p>
+                    <p style="font-size: 0.95rem;">Add multi-material printers, biocomposites, regolith-based
+                        ceramics/glass production capabilities</p>
+                </div>
+                <div>
+                    <p style="font-weight: bold; color: #79c0ff; font-size: 1.05rem; margin-bottom: 0.5rem;">Full AI
+                        Autonomy</p>
+                    <p style="font-size: 0.95rem;">Future AI systems can handle complete material flow without crew
+                        oversight</p>
+                </div>
+                <div>
+                    <p style="font-weight: bold; color: #79c0ff; font-size: 1.05rem; margin-bottom: 0.5rem;">Distributed
+                        Operations</p>
+                    <p style="font-size: 0.95rem;">Mobile MHRMS pods deployable across Mars surface for remote site
+                        operations</p>
+                </div>
+                <div>
+                    <p style="font-weight: bold; color: #79c0ff; font-size: 1.05rem; margin-bottom: 0.5rem;">Colony
+                        Integration</p>
+                    <p style="font-size: 0.95rem;">Habitat clusters connected via modular corridors for large-scale Mars
+                        settlements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p class="intro-text">
+            We are a passionate team of innovators, engineers, and space exploration enthusiasts united by a common
+            vision: making sustainable human presence on Mars a reality through advanced recycling and manufacturing
+            technology.
+        </p>
+
+        <div
+            style="background: linear-gradient(135deg, #161b22 0%, #1c2128 100%); padding: 2.5rem; border-radius: 12px; margin: 2rem 0; border: 2px solid #58a6ff;">
+            <h3 style="margin-top: 0; color: #58a6ff;">🚀 Our Mission</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                To revolutionize space resource management by developing closed-loop recycling systems that transform
+                waste into valuable resources, enabling long-duration missions and permanent human settlement beyond
+                Earth. We believe that sustainability isn't just an Earth concept—it's the key to humanity's future
+                among the stars.
+            </p>
+        </div>
+
+        <h3>What Drives Us</h3>
+        <div class="benefits-grid" style="margin-top: 2rem;">
+            <div class="benefit-card">
+                <div class="benefit-icon">🌟</div>
+                <h3>Innovation</h3>
+                <p>We push the boundaries of what's possible by combining cutting-edge technology with practical
+                    engineering solutions for extreme environments.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🤝</div>
+                <h3>Collaboration</h3>
+                <p>We believe the best solutions come from diverse perspectives working together toward a common goal of
+                    sustainable space exploration.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🌱</div>
+                <h3>Sustainability</h3>
+                <p>Creating closed-loop systems that eliminate waste and maximize resource utilization is at the core of
+                    everything we do.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🔬</div>
+                <h3>Scientific Excellence</h3>
+                <p>We ground our innovations in rigorous research, proven engineering principles, and NASA mission
+                    requirements.</p>
+            </div>
+        </div>
+
+        <div
+            style="background: linear-gradient(135deg, #1c2128 0%, #161b22 100%); padding: 2.5rem; border-radius: 12px; margin-top: 3rem; border: 2px solid #ff6f61;">
+            <h3 style="margin-top: 0; color: #ff6f61;">🎯 Our Vision for the Future</h3>
+            <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                The MHRMS is just the beginning. We envision a future where every space habitat, from lunar bases to
+                Mars colonies and beyond, operates as a self-sustaining ecosystem. Our technology will enable:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">🏗️ Colony
+                        Expansion</p>
+                    <p style="font-size: 0.95rem;">Growing settlements that build themselves using recycled materials
+                        and local resources</p>
+                </div>
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">🛰️ Deep
+                        Space Missions</p>
+                    <p style="font-size: 0.95rem;">Extended missions to the outer solar system powered by circular
+                        resource economies</p>
+                </div>
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">🌍 Earth
+                        Applications</p>
+                    <p style="font-size: 0.95rem;">Technology transfer bringing zero-waste manufacturing to remote and
+                        resource-limited areas on Earth</p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            style="background: rgba(88, 166, 255, 0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #58a6ff; text-align: center;">
+            <h3 style="color: #58a6ff; margin-bottom: 1rem;">Join Us on This Journey</h3>
+            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem auto;">
+                We're participating in the NASA Space Apps Challenge 2025 to demonstrate that sustainable space
+                exploration isn't just possible—it's essential. Whether you're an engineer, scientist, student, or space
+                enthusiast, we invite you to follow our progress and join the conversation about humanity's sustainable
+                future in space.
+            </p>
+            <p style="font-size: 1rem; color: #8b949e; font-style: italic;">
+                "The future of space exploration belongs to those who dare to reimagine what's possible."
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>NASA Space Apps Challenge 2025</strong> | SpaceTrash Hack: Revolutionizing Recycling on Mars</p>
+        <p style="margin-top: 1rem;">Enabling sustainable human exploration through closed-loop resource recovery and
+            in-situ manufacturing</p>
+        <div class="citation">
+            Video source: NASA/JPL-Caltech, <a
+                href="https://images-assets.nasa.gov/video/JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover/JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover~orig.mp4"
+                target="_blank">Explore Mars: Jezero Crater with NASA's Perseverance Rover</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('nav a, .scroll-btn, header .bottom-nav a').forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                const target = el.getAttribute('href');
+                if (target && target.startsWith('#')) {
+                    const element = document.querySelector(target);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Toggle collapsible sections
+        function toggleCollapsible(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+
+            if (!isActive) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = '0';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
