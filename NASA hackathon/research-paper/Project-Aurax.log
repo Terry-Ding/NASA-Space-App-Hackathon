@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.5)  5 OCT 2025 10:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.5)  5 OCT 2025 10:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -253,44 +253,53 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count291
 \@lastruleclass=\count292
 \@thisrulewidth=\dimen176
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen177
+\ar@mcellbox=\box53
+\extrarowheight=\dimen178
+\NC@list=\toks26
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box54
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count293
-\l__pdf_internal_box=\box53
+\l__pdf_internal_box=\box55
 ) (./Project-Aurax.aux)
 \openout1 = `Project-Aurax.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count294
-\scratchdimen=\dimen177
-\scratchbox=\box54
+\scratchdimen=\dimen179
+\scratchbox=\box56
 \nofMPsegments=\count295
 \nofMParguments=\count296
-\everyMPshowfont=\toks26
+\everyMPshowfont=\toks27
 \MPscratchCnt=\count297
-\MPscratchDim=\dimen178
+\MPscratchDim=\dimen180
 \MPnumerator=\count298
 \makeMPintoPDFobject=\count299
-\everyMPtoPDFconversion=\toks27
+\everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -331,34 +340,49 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 21.
+Package hyperref Info: Link coloring OFF on input line 22.
 (./Project-Aurax.out) (./Project-Aurax.out)
 \@outlinefile=\write3
 \openout3 = `Project-Aurax.out'.
 
- [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./Project-Aurax.aux)
+Underfull \hbox (badness 7116) in paragraph at lines 46--46
+[]|\OT1/cmr/m/n/12 Must min-i-mize the
+ []
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 47--47
+\OT1/cmr/m/n/12 no more than eight
+ []
+
+
+Overfull \hbox (2.70044pt too wide) in paragraph at lines 40--50
+ [][] 
+ []
+
+[1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2] [3] (./Project-Aurax.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Project-Aurax.out' has not changed.
-(rerunfilecheck)             Checksum: 2191F5D0849C6B0073FB78B9F452FA00;101.
+(rerunfilecheck)             Checksum: 23FD7D7595D901FBDB7B27DD632E0019;562.
  ) 
 Here is how much of TeX's memory you used:
- 9584 strings out of 474116
- 148056 string characters out of 5743683
- 1929187 words of memory out of 5000000
- 31847 multiletter control sequences out of 15000+600000
- 561587 words of font info for 48 fonts, out of 8000000 for 9000
+ 9684 strings out of 474116
+ 149463 string characters out of 5743683
+ 1937187 words of memory out of 5000000
+ 31929 multiletter control sequences out of 15000+600000
+ 565347 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,358b,438s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Project-Aurax.pdf (1 page, 36040 bytes).
+ 75i,10n,79p,397b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
+Output written on Project-Aurax.pdf (3 pages, 46885 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
- 9 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 67 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
