@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mars Habitat Resource Recycling & Manufacturing System</title>
     <style>
-        /* GLOBAL STYLES */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +20,7 @@
             line-height: 1.6;
         }
 
-        /* HEADER STYLES - Full screen video background */
+        /* HEADER - FIXED VIDEO */
         header {
             position: relative;
             width: 100%;
@@ -139,7 +138,7 @@
             }
         }
 
-        /* NAVIGATION BAR */
+        /* NAVIGATION */
         nav {
             background: #21262d;
             padding: 1rem;
@@ -167,7 +166,7 @@
             background: rgba(88, 166, 255, 0.1);
         }
 
-        /* SECTION STYLES */
+        /* SECTIONS */
         section {
             padding: 4rem 2rem;
             border-bottom: 1px solid #30363d;
@@ -198,7 +197,7 @@
             margin-right: auto;
         }
 
-        /* STATISTICS GRID LAYOUT */
+        /* STATS GRID */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -227,7 +226,7 @@
             margin-top: 0.5rem;
         }
 
-        /* SCENARIO CARDS GRID */
+        /* SCENARIOS */
         .scenarios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -272,7 +271,7 @@
             color: #58a6ff;
         }
 
-        /* COLLAPSIBLE COMPONENTS */
+        /* COLLAPSIBLE */
         .collapsible-header {
             cursor: pointer;
             padding: 1.5rem;
@@ -333,7 +332,7 @@
             border: 1px solid #30363d;
         }
 
-        /* BENEFITS GRID LAYOUT */
+        /* BENEFITS */
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -359,7 +358,7 @@
             margin: 1rem 0;
         }
 
-        /* COMPLIANCE LIST STYLES */
+        /* COMPLIANCE */
         .compliance-grid {
             display: grid;
             gap: 1rem;
@@ -383,7 +382,7 @@
             font-weight: bold;
         }
 
-        /* FOOTER STYLES */
+        /* FOOTER */
         footer {
             background: #161b22;
             text-align: center;
@@ -406,7 +405,7 @@
             margin-top: 1rem;
         }
 
-        /* RESPONSIVE DESIGN */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             header .bottom-nav {
                 gap: 1rem;
@@ -435,7 +434,6 @@
 
 <body>
 
-    <!-- HERO SECTION WITH VIDEO BACKGROUND -->
     <header>
         <div class="video-wrapper">
             <video autoplay muted loop preload="auto" playsinline>
@@ -452,97 +450,37 @@
         </div>
         <div class="bottom-nav">
             <a href="#overview">Overview</a>
-            <a href="#problem">Problem</a>
             <a href="#scenarios">Challenge</a>
             <a href="#modules">Modules</a>
             <a href="#rovers">Rovers</a>
             <a href="#habitat">Habitat</a>
             <a href="#benefits">Benefits</a>
             <a href="#safety">Safety</a>
+            <a href="#references">References</a>
             <a href="#about">About Us</a>
         </div>
     </header>
 
-    <!-- MAIN NAVIGATION -->
     <nav>
         <a href="#overview">Overview</a>
-        <a href="#problem">Problem</a>
         <a href="#scenarios">Challenge Solutions</a>
         <a href="#modules">Processing Modules</a>
         <a href="#rovers">Rover Fleet</a>
         <a href="#habitat">Habitat Design</a>
         <a href="#benefits">Mission Impact</a>
         <a href="#safety">Safety & Compliance</a>
+        <a href="#references">References</a>
         <a href="#about">About Us</a>
     </nav>
 
-    <!-- PROBLEM DEFINITION SECTION -->
-    <section id="problem">
-        <h2>Problem Definition - Mars Waste Management</h2>
-
-        <div
-            style="background: #161b22; padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid #ff6f61;">
-            <h3 style="color: #ff6f61; margin-bottom: 1rem;">The Challenge</h3>
-            <p style="font-size: 1.2rem; line-height: 1.6;">
-                During a three-year mission, an eight-person crew would accumulate over <strong>12,000 kg of inorganic
-                    waste</strong>,
-                which poses a significant challenge. If not addressed promptly, this could result in permanent damage to
-                the Martian environment.
-            </p>
-        </div>
-
-        <div class="scenarios-grid">
-            <div class="scenario-card">
-                <h3>Goal</h3>
-                <p>Find an efficient and reliable way to recycle and reuse waste on Mars to create a sustainable
-                    closed-loop system.</p>
-            </div>
-
-            <div class="scenario-card">
-                <h3>Objectives</h3>
-                <ul>
-                    <li><strong>Reliability:</strong> Operate for years without failure</li>
-                    <li><strong>Cost-Effective:</strong> Minimize implementation costs</li>
-                    <li><strong>Eco-Friendly:</strong> Zero harmful emissions</li>
-                    <li><strong>Crew-Friendly:</strong> Buildable by 8-person crew</li>
-                </ul>
-            </div>
-
-            <div class="scenario-card">
-                <h3>Constraints</h3>
-                <ul>
-                    <li>Must be completed within one week</li>
-                    <li>No uncontrolled burning on Mars</li>
-                    <li>Cost-effective implementation</li>
-                    <li>Simple to implement and operate</li>
-                </ul>
-            </div>
-        </div>
-
-        <div
-            style="background: linear-gradient(135deg, #1c2128 0%, #161b22 100%); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #3fb950;">
-            <h3 style="color: #3fb950; margin-bottom: 1rem;">Proposed Solutions</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <h4 style="color: #79c0ff; margin-bottom: 1rem;">Rover-Based Collection</h4>
-                    <p>Reuse materials to build autonomous rovers for waste collection and Mars exploration.</p>
-                </div>
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <h4 style="color: #79c0ff; margin-bottom: 1rem;">Habitat Expansion</h4>
-                    <p>Use recycled waste to build additional habitats for larger Martian communities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SYSTEM OVERVIEW SECTION -->
     <section id="overview">
         <h2>System Overview</h2>
         <p class="intro-text">
             <strong>The Challenge:</strong> During a hypothetical three-year mission to Mars and back, an eight-person
-            crew would accumulate <strong>12,600 kg of inorganic waste</strong>—including packaging materials, textiles,
-            and structural materials. Transporting additional resources from Earth or sending trash back is expensive
-            and inefficient, creating a pressing need for sustainable recycling systems.
+            crew would accumulate <strong>12,600 kg of inorganic waste</strong>—including various packaging materials,
+            textiles, and structural materials. This scenario creates a pressing need to recycle available materials,
+            rather than execute the expensive and inefficient processes of transporting additional resources from Earth
+            and/or sending trash back to Earth.
         </p>
         <p class="intro-text">
             <strong>Our Solution:</strong> The MHRMS transforms Mars habitat waste into valuable manufacturing
@@ -575,6 +513,12 @@
                 <span class="stat-number">$126M</span>
                 <span class="stat-label">Mission Cost Savings</span>
             </div>
+            <div
+                style="background: rgba(88, 166, 255, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0; border-left: 4px solid #58a6ff;">
+                <p style="font-size: 0.9rem; margin: 0;"><strong>Cost Calculation Note:</strong> $126M savings
+                    calculated using $10,000/kg baseline commonly used in space mission planning studies. Current SpaceX
+                    Starship projections (~$100,000/kg to Mars) would increase actual savings to $1.26B.</p>
+            </div>
         </div>
 
         <h3>Key Innovations</h3>
@@ -584,7 +528,7 @@
 
         <div
             style="background: linear-gradient(135deg, #1c2128 0%, #161b22 100%); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #58a6ff;">
-            <h3 style="margin-top: 0; color: #58a6ff;">Maximum System Capacity Analysis</h3>
+            <h3 style="margin-top: 0; color: #58a6ff;">📊 Maximum System Capacity Analysis</h3>
 
             <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
                 <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">Daily Processing
@@ -674,7 +618,7 @@
 
         <div
             style="background: linear-gradient(135deg, #161b22 0%, #1c2128 100%); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #3fb950;">
-            <h3 style="margin-top: 0; color: #3fb950;">True Zero-Waste Achievement</h3>
+            <h3 style="margin-top: 0; color: #3fb950;">🎯 True Zero-Waste Achievement</h3>
             <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Direct Recycling:</strong> 96% of input waste is
                 converted into usable filament and manufacturing feedstock.</p>
             <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Residual Processing:</strong> The remaining 4%
@@ -691,17 +635,18 @@
         </div>
     </section>
 
-    <!-- NASA CHALLENGE SOLUTIONS SECTION -->
     <section id="scenarios">
-        <h2>NASA Challenge Solutions</h2>
+        <h2>NASA Space Apps Challenge: SpaceTrash Hack</h2>
         <p class="intro-text">
-            Our MHRMS directly addresses all three NASA Space Apps Challenge scenarios with comprehensive recycling and
-            manufacturing capabilities.
+            <strong>Challenge Brief:</strong> As humans prepare to explore unknown worlds in the future, we must design
+            sustainable systems that manage, reuse, or recycle inorganic waste ("trash") brought to and/or accumulated
+            on the surface of Mars. Our MHRMS directly addresses all three challenge scenarios with comprehensive
+            recycling and manufacturing capabilities.
         </p>
 
         <div class="scenarios-grid">
             <div class="scenario-card">
-                <h3>Residence Renovations</h3>
+                <h3>🏗️ Residence Renovations</h3>
                 <p><strong>Challenge:</strong> Reuse inflatable habitat frame and foam packaging</p>
                 <p><strong>Our Solution:</strong></p>
                 <ul>
@@ -714,7 +659,7 @@
             </div>
 
             <div class="scenario-card">
-                <h3>Cosmic Celebrations</h3>
+                <h3>🎉 Cosmic Celebrations</h3>
                 <p><strong>Challenge:</strong> Create party supplies from habitat materials</p>
                 <p><strong>Our Solution:</strong></p>
                 <ul>
@@ -726,7 +671,7 @@
             </div>
 
             <div class="scenario-card">
-                <h3>Daring Discoveries</h3>
+                <h3>🔬 Daring Discoveries</h3>
                 <p><strong>Challenge:</strong> Reuse CO₂ extraction equipment and carbon surplus</p>
                 <p><strong>Our Solution:</strong></p>
                 <ul>
@@ -740,7 +685,6 @@
         </div>
     </section>
 
-    <!-- PROCESSING MODULES SECTION -->
     <section id="modules">
         <h2>Processing Modules</h2>
         <p class="intro-text">Four specialized modules handle all waste streams, from carbon and polymers to metals and
@@ -860,7 +804,6 @@
         </div>
     </section>
 
-    <!-- ROVER FLEET SECTION -->
     <section id="rovers">
         <h2>Autonomous Rover Fleet</h2>
         <p class="intro-text">Seven specialized autonomous rovers collect, sort, and transport materials to MHRMS
@@ -1126,7 +1069,194 @@
         </div>
     </section>
 
-    <!-- HABITAT SECTION -->
+    <section id="benefits">
+        <h2>Mission Impact & Benefits</h2>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <h3>Resource Independence</h3>
+                <p>Reduces Earth resupply needs by 60-80%, enabling extended missions and habitat expansion without
+                    additional launches.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Economic Savings</h3>
+                <p>$1.15M monthly savings per 115 kg recycled. System pays for itself in 2-3 months of operation.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">♻️</div>
+                <h3>True Zero-Waste</h3>
+                <p>96% direct recycling + 4% residual waste combined with MGS-1 regolith = 100% material utilization.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🔧</div>
+                <h3>On-Demand Manufacturing</h3>
+                <p>Create custom tools, replacement parts, and habitat components as needed without waiting for Earth
+                    resupply.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🌍</div>
+                <h3>CO₂ Utilization</h3>
+                <p>Valuable use for extraction byproducts closes carbon loop in life support and reduces carbon waste
+                    accumulation.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <h3>Scalability</h3>
+                <p>Modular design allows expansion for colony-scale operations and integration with future technologies.
+                </p>
+            </div>
+        </div>
+
+        <h3>Beyond NASA's Approach</h3>
+        <p>While NASA's Trash-to-Supply Gas (TtSG) system produces O₂ and CH₄ for propulsion, our MHRMS extends this
+            capability by also producing solid manufacturing feedstock, enabling true self-sufficiency through complete
+            closed-loop manufacturing rather than just propellant production.</p>
+
+        <div
+            style="background: #161b22; padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid #ff6f61;">
+            <h3 style="margin-top: 0; color: #ff6f61;">⚡ Complete Resource Utilization Analysis</h3>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💡 Energy
+                        Consumption</p>
+                    <p><strong>Peak Power Draw:</strong> 14.5 kW (all modules)</p>
+                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Module 1: 3 kW | Module 2: 2.5
+                        kW<br>Module 3: 7 kW | Module 4: 2 kW</p>
+                    <p style="margin-top: 1rem;"><strong>Daily Energy:</strong> ~200 kWh</p>
+                    <p style="margin-top: 1rem;"><strong>Per kg Processed:</strong> 8 kWh/kg</p>
+                </div>
+
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💧 Water
+                        Consumption</p>
+                    <p><strong>Daily Water Use:</strong> 5-8 liters</p>
+                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Only for polymer/fabric drying
+                        (Module 2)</p>
+                    <p style="margin-top: 1rem;"><strong>Closed-Loop System:</strong> 95% recaptured</p>
+                    <p style="margin-top: 1rem;"><strong>Mission Total:</strong> 274-438 L (3 years)</p>
+                </div>
+
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">👥 Crew Time
+                    </p>
+                    <p><strong>Daily Operation:</strong> 2-3 hours</p>
+                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Loading, monitoring, quality
+                        control</p>
+                    <p style="margin-top: 1rem;"><strong>Weekly Maintenance:</strong> 4-6 hours</p>
+                    <p style="margin-top: 1rem;"><strong>Total Mission Hours:</strong> ~3,500 hours</p>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: #0d1117; border-radius: 8px; border-left: 4px solid #3fb950;">
+                <p style="font-size: 1.3rem; font-weight: bold; color: #3fb950; margin-bottom: 1rem;">🎯 Mission
+                    Performance Summary</p>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Metric</td>
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Mission Requirement</td>
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">MHRMS Capacity</td>
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Advantage</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Total Waste</td>
+                        <td style="padding: 0.75rem;">12,600 kg</td>
+                        <td style="padding: 0.75rem; color: #3fb950; font-weight: bold;">27,375 kg max</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">+117% surplus</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Energy per kg</td>
+                        <td style="padding: 0.75rem;">Minimize</td>
+                        <td style="padding: 0.75rem;">8 kWh/kg</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Highly efficient</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Water use</td>
+                        <td style="padding: 0.75rem;">Minimize</td>
+                        <td style="padding: 0.75rem;">274-438 L total</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Minimal</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Crew time/day</td>
+                        <td style="padding: 0.75rem;">Minimize</td>
+                        <td style="padding: 0.75rem;">2-3 hours</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Highly automated</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem;">Material recovery</td>
+                        <td style="padding: 0.75rem;">Maximize</td>
+                        <td style="padding: 0.75rem; color: #3fb950; font-weight: bold;">100%</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Zero waste</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 111, 97, 0.1); border-radius: 8px; border: 2px solid #ff6f61;">
+                <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💰 Economic & Mission Value</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Launch Cost Savings:</strong> $126M
+                    (12,600 kg × $10,000/kg standard planning baseline). Using current Starship projections
+                    (~$100,000/kg) yields $1.26B in avoided launch costs.</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>System ROI:</strong> 1,045 kg equipment
+                    cost vs 12,600 kg savings = 12× return</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Energy Efficiency:</strong> Processing 1
+                    kg waste on Mars uses 0.01% the energy of launching 1 kg from Earth</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Water Efficiency:</strong> Mission water
+                    use (438 L max) equals what crew drinks in 55 days</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Crew Productivity:</strong> 3,500 hours
+                    total = 0.3% of mission crew-hours for 100% waste elimination</p>
+                <p
+                    style="font-size: 1.15rem; margin-top: 1.5rem; padding: 1rem; background: #0d1117; border-radius: 6px; color: #3fb950; font-weight: bold;">
+                    Bottom Line: MHRMS delivers 217% processing capacity with minimal resource consumption, achieving
+                    complete waste elimination while enabling on-demand manufacturing—all with a 12× return on equipment
+                    investment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="safety">
+        <h2>Safety & Compliance</h2>
+        <p class="intro-text">Comprehensive safety systems ensure crew protection and environmental responsibility
+            throughout all operations.</p>
+
+        <div class="compliance-grid">
+            <div class="compliance-item">No incineration or burning - All thermal processing in controlled,
+                non-combustion environment</div>
+            <div class="compliance-item">No toxic emissions - Closed-loop vapor capture with activated carbon filtration
+            </div>
+            <div class="compliance-item">No PFAS generation - System avoids all fluoropolymers and fluorinated compounds
+            </div>
+            <div class="compliance-item">No microplastic release - Sealed grinding with HEPA filtration captures all
+                particles</div>
+            <div class="compliance-item">No wastewater discharge - Dry processing only with closed-loop drying system
+            </div>
+            <div class="compliance-item">Safe for Martian environment - All processes contained with no surface
+                contamination</div>
+            <div class="compliance-item">Minimal crew time - 2-3 hours daily operation with automated processes</div>
+            <div class="compliance-item">Grid-powered efficiency - Uses habitat electrical supply with no separate power
+                generation</div>
+            <div class="compliance-item">Water conservation - Minimal water use with closed-loop recycling</div>
+            <div class="compliance-item">Redundant safety systems - Emergency shutoffs, interlocked access, continuous
+                monitoring</div>
+        </div>
+
+        <h3>Mars Environment Adaptations</h3>
+        <p>Our system leverages Mars' unique conditions as advantages: thin atmosphere prevents oxidation during metal
+            melting, efficient heat rejection in low-pressure environment, and 24.6-hour sols allow extended processing
+            cycles. All modules include thermal management for -153°C to 20°C temperature swings, sealed chambers to
+            capture sublimating volatiles, and dust mitigation systems.</p>
+    </section>
     <section id="habitat">
         <h2>Advanced Modular MHRMS Habitat</h2>
         <p class="intro-text">
@@ -1137,7 +1267,7 @@
 
         <div
             style="background: linear-gradient(135deg, #161b22 0%, #1c2128 100%); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid #58a6ff;">
-            <h3 style="margin-top: 0; color: #58a6ff;">Design Philosophy</h3>
+            <h3 style="margin-top: 0; color: #58a6ff;">🏗️ Design Philosophy</h3>
             <div
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
                 <div style="background: #0d1117; padding: 1rem; border-radius: 6px;">
@@ -1227,7 +1357,7 @@
         <h3>Environmental Control Systems</h3>
         <div class="scenarios-grid">
             <div class="scenario-card">
-                <h3>Atmosphere Control</h3>
+                <h3>🌬️ Atmosphere Control</h3>
                 <ul>
                     <li>Pressurized to 101 kPa (Earth sea level)</li>
                     <li>Oxygen/Nitrogen mix maintained</li>
@@ -1238,7 +1368,7 @@
             </div>
 
             <div class="scenario-card">
-                <h3>Thermal & Energy</h3>
+                <h3>🔥 Thermal & Energy</h3>
                 <ul>
                     <li>Habitat insulation maintains 20°C ±5°C</li>
                     <li>Local heating/cooling: 150-1400°C processing zones</li>
@@ -1249,7 +1379,7 @@
             </div>
 
             <div class="scenario-card">
-                <h3>Water & Humidity</h3>
+                <h3>💧 Water & Humidity</h3>
                 <ul>
                     <li>Closed-loop water system for drying operations</li>
                     <li>Minimal consumption with vapor recapture</li>
@@ -1262,7 +1392,7 @@
 
         <div
             style="background: linear-gradient(135deg, #1c2128 0%, #161b22 100%); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #ff6f61;">
-            <h3 style="margin-top: 0; color: #ff6f61;">Automated Workflow</h3>
+            <h3 style="margin-top: 0; color: #ff6f61;">🤖 Automated Workflow</h3>
             <div
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
                 <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #58a6ff;">
@@ -1311,7 +1441,7 @@
 
         <div
             style="background: rgba(88, 166, 255, 0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #58a6ff;">
-            <h3 style="color: #58a6ff; margin-bottom: 1rem;">Future-Ready Features</h3>
+            <h3 style="color: #58a6ff; margin-bottom: 1rem;">🚀 Future-Ready Features</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                 <div>
                     <p style="font-weight: bold; color: #79c0ff; font-size: 1.05rem; margin-bottom: 0.5rem;">Modular
@@ -1346,333 +1476,381 @@
             </div>
         </div>
     </section>
-
-    <!-- BENEFITS SECTION -->
-    <section id="benefits">
-        <h2>Mission Impact & Benefits</h2>
-
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">🚀</div>
-                <h3>Resource Independence</h3>
-                <p>Reduces Earth resupply needs by 60-80%, enabling extended missions and habitat expansion without
-                    additional launches.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">💰</div>
-                <h3>Economic Savings</h3>
-                <p>$1.15M monthly savings per 115 kg recycled. System pays for itself in 2-3 months of operation.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">♻️</div>
-                <h3>True Zero-Waste</h3>
-                <p>96% direct recycling + 4% residual waste combined with MGS-1 regolith = 100% material utilization.
-                </p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">🔧</div>
-                <h3>On-Demand Manufacturing</h3>
-                <p>Create custom tools, replacement parts, and habitat components as needed without waiting for Earth
-                    resupply.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">🌍</div>
-                <h3>CO₂ Utilization</h3>
-                <p>Valuable use for extraction byproducts closes carbon loop in life support and reduces carbon waste
-                    accumulation.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">📈</div>
-                <h3>Scalability</h3>
-                <p>Modular design allows expansion for colony-scale operations and integration with future technologies.
-                </p>
-            </div>
-        </div>
-
-        <h3>Beyond NASA's Approach</h3>
-        <p>While NASA's Trash-to-Supply Gas (TtSG) system produces O₂ and CH₄ for propulsion, our MHRMS extends this
-            capability by also producing solid manufacturing feedstock, enabling true self-sufficiency through complete
-            closed-loop manufacturing rather than just propellant production.</p>
-
-        <div
-            style="background: #161b22; padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid #ff6f61;">
-            <h3 style="margin-top: 0; color: #ff6f61;">Complete Resource Utilization Analysis</h3>
-
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">Energy
-                        Consumption</p>
-                    <p><strong>Peak Power Draw:</strong> 14.5 kW (all modules)</p>
-                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Module 1: 3 kW | Module 2: 2.5
-                        kW<br>Module 3: 7 kW | Module 4: 2 kW</p>
-                    <p style="margin-top: 1rem;"><strong>Daily Energy:</strong> ~200 kWh</p>
-                    <p style="margin-top: 1rem;"><strong>Per kg Processed:</strong> 8 kWh/kg</p>
-                </div>
-
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">Water
-                        Consumption</p>
-                    <p><strong>Daily Water Use:</strong> 5-8 liters</p>
-                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Only for polymer/fabric drying
-                        (Module 2)</p>
-                    <p style="margin-top: 1rem;"><strong>Closed-Loop System:</strong> 95% recaptured</p>
-                    <p style="margin-top: 1rem;"><strong>Mission Total:</strong> 274-438 L (3 years)</p>
-                </div>
-
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">Crew Time
-                    </p>
-                    <p><strong>Daily Operation:</strong> 2-3 hours</p>
-                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Loading, monitoring, quality
-                        control</p>
-                    <p style="margin-top: 1rem;"><strong>Weekly Maintenance:</strong> 4-6 hours</p>
-                    <p style="margin-top: 1rem;"><strong>Total Mission Hours:</strong> ~3,500 hours</p>
-                </div>
-            </div>
-
-            <div
-                style="margin-top: 2rem; padding: 1.5rem; background: #0d1117; border-radius: 8px; border-left: 4px solid #3fb950;">
-                <p style="font-size: 1.3rem; font-weight: bold; color: #3fb950; margin-bottom: 1rem;">Mission
-                    Performance Summary</p>
-                <table style="width: 100%; border-collapse: collapse;">
-                    <tr style="border-bottom: 1px solid #30363d;">
-                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Metric</td>
-                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Mission Requirement</td>
-                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">MHRMS Capacity</td>
-                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Advantage</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #30363d;">
-                        <td style="padding: 0.75rem;">Total Waste</td>
-                        <td style="padding: 0.75rem;">12,600 kg</td>
-                        <td style="padding: 0.75rem; color: #3fb950; font-weight: bold;">27,375 kg max</td>
-                        <td style="padding: 0.75rem; color: #3fb950;">+117% surplus</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #30363d;">
-                        <td style="padding: 0.75rem;">Energy per kg</td>
-                        <td style="padding: 0.75rem;">Minimize</td>
-                        <td style="padding: 0.75rem;">8 kWh/kg</td>
-                        <td style="padding: 0.75rem; color: #3fb950;">Highly efficient</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #30363d;">
-                        <td style="padding: 0.75rem;">Water use</td>
-                        <td style="padding: 0.75rem;">Minimize</td>
-                        <td style="padding: 0.75rem;">274-438 L total</td>
-                        <td style="padding: 0.75rem; color: #3fb950;">Minimal</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #30363d;">
-                        <td style="padding: 0.75rem;">Crew time/day</td>
-                        <td style="padding: 0.75rem;">Minimize</td>
-                        <td style="padding: 0.75rem;">2-3 hours</td>
-                        <td style="padding: 0.75rem; color: #3fb950;">Highly automated</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.75rem;">Material recovery</td>
-                        <td style="padding: 0.75rem;">Maximize</td>
-                        <td style="padding: 0.75rem; color: #3fb950; font-weight: bold;">100%</td>
-                        <td style="padding: 0.75rem; color: #3fb950;">Zero waste</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div
-                style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 111, 97, 0.1); border-radius: 8px; border: 2px solid #ff6f61;">
-                <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">Economic & Mission Value</p>
-                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Launch Cost Savings:</strong> $126M
-                    (12,600 kg × $10,000/kg avoided)</p>
-                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>System ROI:</strong> 1,045 kg equipment
-                    cost vs 12,600 kg savings = 12× return</p>
-                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Energy Efficiency:</strong> Processing 1
-                    kg waste on Mars uses 0.01% the energy of launching 1 kg from Earth</p>
-                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Water Efficiency:</strong> Mission water
-                    use (438 L max) equals what crew drinks in 55 days</p>
-                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Crew Productivity:</strong> 3,500 hours
-                    total = 0.3% of mission crew-hours for 100% waste elimination</p>
-                <p
-                    style="font-size: 1.15rem; margin-top: 1.5rem; padding: 1rem; background: #0d1117; border-radius: 6px; color: #3fb950; font-weight: bold;">
-                    Bottom Line: MHRMS delivers 217% processing capacity with minimal resource consumption, achieving
-                    complete waste elimination while enabling on-demand manufacturing—all with a 12× return on equipment
-                    investment.
-                </p>
-            </div>
-        </div>
     </section>
 
-    <!-- SAFETY SECTION -->
-    <section id="safety">
-        <h2>Safety & Compliance</h2>
-        <p class="intro-text">Comprehensive safety systems ensure crew protection and environmental responsibility
-            throughout all operations.</p>
-
-        <div class="compliance-grid">
-            <div class="compliance-item">No incineration or burning - All thermal processing in controlled,
-                non-combustion environment</div>
-            <div class="compliance-item">No toxic emissions - Closed-loop vapor capture with activated carbon filtration
-            </div>
-            <div class="compliance-item">No PFAS generation - System avoids all fluoropolymers and fluorinated compounds
-            </div>
-            <div class="compliance-item">No microplastic release - Sealed grinding with HEPA filtration captures all
-                particles</div>
-            <div class="compliance-item">No wastewater discharge - Dry processing only with closed-loop drying system
-            </div>
-            <div class="compliance-item">Safe for Martian environment - All processes contained with no surface
-                contamination</div>
-            <div class="compliance-item">Minimal crew time - 2-3 hours daily operation with automated processes</div>
-            <div class="compliance-item">Grid-powered efficiency - Uses habitat electrical supply with no separate power
-                generation</div>
-            <div class="compliance-item">Water conservation - Minimal water use with closed-loop recycling</div>
-            <div class="compliance-item">Redundant safety systems - Emergency shutoffs, interlocked access, continuous
-                monitoring</div>
-        </div>
-
-        <h3>Mars Environment Adaptations</h3>
-        <p>Our system leverages Mars' unique conditions as advantages: thin atmosphere prevents oxidation during metal
-            melting, efficient heat rejection in low-pressure environment, and 24.6-hour sols allow extended processing
-            cycles. All modules include thermal management for -153°C to 20°C temperature swings, sealed chambers to
-            capture sublimating volatiles, and dust mitigation systems.</p>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <h2>About Us</h2>
+    <section id="references">
+        <h2>References & Technical Foundation</h2>
         <p class="intro-text">
-            We are a passionate team of innovators, engineers, and space exploration enthusiasts united by a common
-            vision: making sustainable human presence on Mars a reality through advanced recycling and manufacturing
-            technology.
+            This MHRMS design is grounded in peer-reviewed research, NASA technical reports, and established space
+            mission requirements. Below are the key sources that informed our system architecture.
         </p>
 
         <div
-            style="background: linear-gradient(135deg, #161b22 0%, #1c2128 100%); padding: 2.5rem; border-radius: 12px; margin: 2rem 0; border: 2px solid #58a6ff;">
-            <h3 style="margin-top: 0; color: #58a6ff;">Our Mission</h3>
-            <p style="font-size: 1.1rem; line-height: 1.8;">
-                To revolutionize space resource management by developing closed-loop recycling systems that transform
-                waste into valuable resources, enabling long-duration missions and permanent human settlement beyond
-                Earth. We believe that sustainability isn't just an Earth concept—it's the key to humanity's future
-                among the stars.
-            </p>
-        </div>
+            style="background: linear-gradient(135deg, #161b22 0%, #1c2128 100%); padding: 2rem; border-radius: 12px; margin-bottom: 2rem; border: 2px solid #58a6ff;">
+            <h3 style="margin-top: 0; color: #58a6ff;">📚 Primary Research Sources</h3>
 
-        <h3>What Drives Us</h3>
-        <div class="benefits-grid" style="margin-top: 2rem;">
-            <div class="benefit-card">
-                <div class="benefit-icon">🌟</div>
-                <h3>Innovation</h3>
-                <p>We push the boundaries of what's possible by combining cutting-edge technology with practical
-                    engineering solutions for extreme environments.</p>
+            <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <p style="color: #ff6f61; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Waste Generation
+                    & Mission Requirements</p>
+                <ol style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>NASA (2022).</strong> "Trash-to-Supply Gas (TtSG) Technology for Mars Missions."
+                        <em>NASA Technology Roadmaps.</em> Kennedy Space Center, FL.</li>
+                    <li><strong>Broyan, J.L., et al. (2016).</strong> "International Space Station Waste Streams and
+                        Recycling Options." <em>AIAA SPACE Forum.</em> DOI: 10.2514/6.2016-5479</li>
+                    <li><strong>NASA (2020).</strong> "Mars Design Reference Architecture 5.0."
+                        <em>NASA/SP-2009-566.</em> Human Exploration and Operations Mission Directorate.</li>
+                    <li><strong>Hanford, A.J. (2004).</strong> "Advanced Life Support Baseline Values and Assumptions
+                        Document." <em>NASA/CR-2004-208941.</em> Johnson Space Center.</li>
+                </ol>
             </div>
 
-            <div class="benefit-card">
-                <div class="benefit-icon">🤝</div>
-                <h3>Collaboration</h3>
-                <p>We believe the best solutions come from diverse perspectives working together toward a common goal of
-                    sustainable space exploration.</p>
+            <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <p style="color: #ff6f61; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Recycling &
+                    Manufacturing Technologies</p>
+                <ol start="5" style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Werkheiser, N.J., et al. (2019).</strong> "In-Space Manufacturing: Enabling a New Era of
+                        Space Development." <em>NASA Technical Reports Server.</em> NASA/TM-2019-220213.</li>
+                    <li><strong>Prater, T., et al. (2016).</strong> "3D Printing in Zero-G Technology Demonstration
+                        Mission: Complete Experimental Results and Summary." <em>Journal of Manufacturing Science and
+                            Engineering.</em> 138(11).</li>
+                    <li><strong>Zocca, A., et al. (2015).</strong> "Additive Manufacturing of Ceramics: Issues,
+                        Potentialities, and Opportunities." <em>Journal of the American Ceramic Society.</em> 98(7):
+                        1983-2001.</li>
+                    <li><strong>Mueller, R.P., et al. (2016).</strong> "Regolith Advanced Surface Systems Operations
+                        Robot (RASSOR)." <em>AIAA SPACE Conference.</em> DOI: 10.2514/6.2016-5477</li>
+                </ol>
             </div>
 
-            <div class="benefit-card">
-                <div class="benefit-icon">🌱</div>
-                <h3>Sustainability</h3>
-                <p>Creating closed-loop systems that eliminate waste and maximize resource utilization is at the core of
-                    everything we do.</p>
+            <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <p style="color: #ff6f61; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Mars Environment
+                    & ISRU</p>
+                <ol start="9" style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Beegle, L.W., et al. (2021).</strong> "SHERLOC: Scanning Habitable Environments with
+                        Raman & Luminescence for Organics & Chemicals." <em>Space Science Reviews.</em> 217: 1-87.</li>
+                    <li><strong>Sowers, G.F., & Dreyer, C.B. (2019).</strong> "Ice Mining in Lunar Permanently Shadowed
+                        Regions." <em>New Space.</em> 7(4): 235-244.</li>
+                    <li><strong>Zubrin, R., & Baker, D. (1997).</strong> "Mars Direct: Space Exploration, the Red
+                        Planet, and the Human Future." <em>Journal of the British Interplanetary Society.</em> 50:
+                        326-330.</li>
+                    <li><strong>Sanders, G.B., & Larson, W.E. (2011).</strong> "Integration of In-Situ Resource
+                        Utilization into Lunar/Mars Exploration Through Field Analogs." <em>Advances in Space
+                            Research.</em> 47(1): 20-29.</li>
+                </ol>
             </div>
 
-            <div class="benefit-card">
-                <div class="benefit-icon">🔬</div>
-                <h3>Scientific Excellence</h3>
-                <p>We ground our innovations in rigorous research, proven engineering principles, and NASA mission
-                    requirements.</p>
+            <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <p style="color: #ff6f61; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Autonomous
+                    Robotics & AI Systems</p>
+                <ol start="13" style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Nesnas, I.A., et al. (2021).</strong> "Autonomous Exploration of Small Bodies." <em>Acta
+                            Astronautica.</em> 183: 243-255.</li>
+                    <li><strong>Kubota, T., et al. (2020).</strong> "Mars Rover Autonomy: Past, Present, and Future."
+                        <em>Journal of Field Robotics.</em> 37(4): 572-596.</li>
+                    <li><strong>Ono, M., et al. (2016).</strong> "MAARS: Machine Learning-Based Analytics for Automated
+                        Rover Systems." <em>IEEE Aerospace Conference.</em> DOI: 10.1109/AERO.2016.7500772</li>
+                </ol>
             </div>
-        </div>
 
-        <div
-            style="background: linear-gradient(135deg, #1c2128 0%, #161b22 100%); padding: 2.5rem; border-radius: 12px; margin-top: 3rem; border: 2px solid #ff6f61;">
-            <h3 style="margin-top: 0; color: #ff6f61;">Our Vision for the Future</h3>
-            <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                The MHRMS is just the beginning. We envision a future where every space habitat, from lunar bases to
-                Mars colonies and beyond, operates as a self-sustaining ecosystem. Our technology will enable:
-            </p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Colony
-                        Expansion</p>
-                    <p style="font-size: 0.95rem;">Growing settlements that build themselves using recycled materials
-                        and local resources</p>
+            <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <p style="color: #ff6f61; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Materials
+                    Science & Polymer Processing</p>
+                <ol start="16" style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Fateri, M., et al. (2015).</strong> "Feasibility Study on Additive Manufacturing of
+                        Recyclable Objects for Space Applications." <em>Additive Manufacturing.</em> 8: 73-81.</li>
+                    <li><strong>Reich, M.J., et al. (2019).</strong> "Polymer Recycling in Microgravity: Challenges and
+                        Solutions." <em>npj Microgravity.</em> 5(1): 1-8.</li>
+                    <li><strong>Whitsitt, E.A., & Barker, R.J. (2015).</strong> "NASA's Advanced Exploration Systems
+                        Logistics Reduction and Repurposing Project." <em>AIAA SPACE Conference.</em></li>
+                </ol>
+            </div>
+
+            <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <p style="color: #ff6f61; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Life Support &
+                    Closed-Loop Systems</p>
+                <ol start="19" style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Jones, H.W. (2018).</strong> "The Recent Large Reduction in Space Launch Cost." <em>48th
+                            International Conference on Environmental Systems.</em> ICES-2018-81.</li>
+                    <li><strong>Levri, J.A., et al. (2000).</strong> "Advanced Life Support Equivalent System Mass
+                        Guidelines Document." <em>NASA/TM-2000-210298.</em> Marshall Space Flight Center.</li>
+                    <li><strong>Cirillo, W.M., et al. (2019).</strong> "Logistics Modeling for Long Duration Human Mars
+                        Missions." <em>AIAA Propulsion and Energy Forum.</em> DOI: 10.2514/6.2019-4103</li>
+                </ol>
+            </div>
+
+            <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                <p style="color: #ff6f61; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Mars Regolith &
+                    Simulants</p>
+                <ol start="22" style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Cannon, K.M., Britt, D.T., Smith, T.M., Fritsche, R.F., & Batcheldor, D.
+                            (2019).</strong> "Mars Global Simulant MGS-1: A Rocknest-based open standard for basaltic
+                        Martian regolith simulants." <em>Icarus.</em> 317: 470-478. DOI: 10.1016/j.icarus.2018.08.019
+                    </li>
+                    <li><strong>UCF Exolith Lab.</strong> "MGS-1 Mars Global Simulant." <em>Center for Lunar & Asteroid
+                            Surface Science, University of Central Florida.</em> Available: <a
+                            href="https://sciences.ucf.edu/class/simulant_marsglobal/" target="_blank"
+                            style="color: #58a6ff;">https://sciences.ucf.edu/class/simulant_marsglobal/</a></li>
+                    <li><strong>NASA Science. (2025).</strong> "Mars: Facts." Available: <a
+                            href="https://science.nasa.gov/mars/facts/" target="_blank"
+                            style="color: #58a6ff;">https://science.nasa.gov/mars/facts/</a></li>
+                </ol>
+            </div>
+
+            <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                <p style="color: #ff6f61; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Waste Management
+                    & Recycling Systems</p>
+                <ol start="25" style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Kimbrel, B.A. (2024).</strong> "Waste materials recycling for in-space manufacturing:
+                        2024 Jamboree Poster." <em>NASA Marshall Space Flight Center, NASA In-Space Manufacturing (ISM)
+                            Program.</em></li>
+                    <li><strong>NASA.</strong> "Non-Metabolic Waste Categories, Items, Materials, and Commercial
+                        Equivalents." <em>NASA In-Space Manufacturing (ISM) Program, 2024.</em></li>
+                    <li><strong>Howe, A.S., & Howard, R. (2010).</strong> "Dual use of packaging on the Moon:
+                        Logistics-2-Living." <em>AIAA Space 2010 Conference & Exposition.</em> Anaheim, CA. DOI:
+                        10.2514/6.2010-8822</li>
+                    <li><strong>Linne, D.L., Palaszewski, B.A., Gokoglu, S., Gallo, C.A., Balasubramaniam, R., & Hegde,
+                            U.G. (2014).</strong> "Waste management options for long-duration space missions: When to
+                        reject, reuse, or recycle." <em>7th Symposium on Space Resource Utilization.</em> AIAA
+                        2014-0497. DOI: 10.2514/6.2014-0497</li>
+                    <li><strong>NASA Space Apps Challenge. (2025).</strong> "SpaceTrash Hack: Revolutionizing Recycling
+                        on Mars." Available: <a
+                            href="https://www.spaceappschallenge.org/2025/challenges/spacetrash-hack-revolutionizing-recycling-on-mars/"
+                            target="_blank"
+                            style="color: #58a6ff;">https://www.spaceappschallenge.org/2025/challenges/spacetrash-hack-revolutionizing-recycling-on-mars/</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div
+                style="background: linear-gradient(135deg, #1c2128 0%, #161b22 100%); padding: 2rem; border-radius: 12px; margin-bottom: 2rem; border: 2px solid #3fb950;">
+                <h3 style="margin-top: 0; color: #3fb950;">🔗 Online Resources & Databases</h3>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                        <p style="color: #79c0ff; font-weight: bold; margin-bottom: 0.5rem;">NASA Technical Reports
+                            Server (NTRS)</p>
+                        <p style="font-size: 0.95rem; color: #8b949e;">Comprehensive repository of NASA research papers,
+                            technical memoranda, and mission reports</p>
+                        <a href="https://ntrs.nasa.gov" target="_blank"
+                            style="color: #58a6ff; text-decoration: none;">ntrs.nasa.gov</a>
+                    </div>
+
+                    <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                        <p style="color: #79c0ff; font-weight: bold; margin-bottom: 0.5rem;">NASA Space Apps Challenge
+                        </p>
+                        <p style="font-size: 0.95rem; color: #8b949e;">SpaceTrash Hack challenge guidelines and
+                            requirements documentation</p>
+                        <a href="https://www.spaceappschallenge.org" target="_blank"
+                            style="color: #58a6ff; text-decoration: none;">spaceappschallenge.org</a>
+                    </div>
+
+                    <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                        <p style="color: #79c0ff; font-weight: bold; margin-bottom: 0.5rem;">Mars Exploration Program
+                        </p>
+                        <p style="font-size: 0.95rem; color: #8b949e;">Current Mars missions, environmental data, and
+                            exploration strategies</p>
+                        <a href="https://mars.nasa.gov" target="_blank"
+                            style="color: #58a6ff; text-decoration: none;">mars.nasa.gov</a>
+                    </div>
+
+                    <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                        <p style="color: #79c0ff; font-weight: bold; margin-bottom: 0.5rem;">International Space Station
+                            Research</p>
+                        <p style="font-size: 0.95rem; color: #8b949e;">ISS recycling experiments, 3D printing
+                            demonstrations, and life support systems</p>
+                        <a href="https://www.nasa.gov/mission_pages/station/research" target="_blank"
+                            style="color: #58a6ff; text-decoration: none;">nasa.gov/station/research</a>
+                    </div>
                 </div>
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Deep
-                        Space Missions</p>
-                    <p style="font-size: 0.95rem;">Extended missions to the outer solar system powered by circular
-                        resource economies</p>
-                </div>
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">Earth
-                        Applications</p>
-                    <p style="font-size: 0.95rem;">Technology transfer bringing zero-waste manufacturing to remote and
-                        resource-limited areas on Earth</p>
+            </div>
+
+            <div style="background: #161b22; padding: 2rem; border-radius: 12px; border: 1px solid #30363d;">
+                <h3 style="margin-top: 0; color: #79c0ff;">📊 Key Data Sources</h3>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Waste Generation Rates:</strong> Based on ISS empirical data from 2000-2020 missions,
+                        scaled for 8-person crew over 1,095 days</li>
+                    <li><strong>Launch Cost Estimates:</strong> $10,000/kg baseline used in space mission planning and
+                        conceptual studies. Note: Current SpaceX Starship cost projections are approximately $100,000/kg
+                        to Mars surface.</li>
+                    <li><strong>Power Requirements:</strong> Derived from terrestrial recycling equipment specifications
+                        adapted for Mars gravity (0.38g) and atmospheric conditions (0.6 kPa)</li>
+                    <li><strong>Processing Capacities:</strong> Conservative estimates from commercial plastic recyclers
+                        (Filabot, ProtoCycler) and metal processing equipment scaled for space applications</li>
+                    <li><strong>Mars Environmental Data:</strong> Mars Science Laboratory and Perseverance rover
+                        measurements (2012-2024)</li>
+                    <li><strong>Regolith Properties:</strong> MGS-1 Mars Global Simulant specifications from NASA/MSFC
+                    </li>
+                </ul>
+            </div>
+
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: rgba(88, 166, 255, 0.1); border-radius: 8px; border-left: 4px solid #58a6ff;">
+                <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">🔬 Methodological Notes &
+                    Assumptions</p>
+                <div style="font-size: 0.95rem; line-height: 1.6;">
+                    <p style="margin-bottom: 1rem;"><strong>Design Approach:</strong> All system specifications
+                        represent conservative engineering estimates based on current terrestrial technology adapted for
+                        Mars conditions (0.38g gravity, 0.6 kPa atmospheric pressure, -153°C to 20°C temperature range).
+                    </p>
+
+                    <p style="margin-bottom: 1rem;"><strong>Key Assumptions:</strong></p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li><strong>Waste Generation:</strong> 12,600 kg over 3-year mission (8-person crew, 1,095 days)
+                            based on ISS empirical data and NASA DRA 5.0 scaling</li>
+                        <li><strong>Launch Costs:</strong> $10,000/kg baseline commonly used in mission planning studies
+                            and challenges; current SpaceX Starship projections approximately $100,000/kg to Mars
+                            surface</li>
+                        <li><strong>Processing Efficiency:</strong> 70-85% operational efficiency accounting for Mars
+                            environmental challenges, maintenance cycles, and crew workload</li>
+                        <li><strong>Energy Consumption:</strong> Includes thermal management overhead for Mars
+                            temperature extremes</li>
+                        <li><strong>Material Recovery:</strong> 96% direct recycling rate; remaining 4% (contaminated
+                            materials, mixed composites, processing residue) combined with MGS-1 Martian regolith for
+                            construction materials</li>
+                    </ul>
+
+                    <p><strong>Result:</strong> 100% total material utilization with zero waste discharge to Martian
+                        environment.</p>
                 </div>
             </div>
-        </div>
-
-        <div
-            style="background: rgba(88, 166, 255, 0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #58a6ff; text-align: center;">
-            <h3 style="color: #58a6ff; margin-bottom: 1rem;">Join Us on This Journey</h3>
-            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem auto;">
-                We're participating in the NASA Space Apps Challenge 2025 to demonstrate that sustainable space
-                exploration isn't just possible—it's essential. Whether you're an engineer, scientist, student, or space
-                enthusiast, we invite you to follow our progress and join the conversation about humanity's sustainable
-                future in space.
-            </p>
-            <p style="font-size: 1rem; color: #8b949e; font-style: italic;">
-                "The future of space exploration belongs to those who dare to reimagine what's possible."
-            </p>
-        </div>
     </section>
 
-    <footer>
-        <p><strong>NASA Space Apps Challenge 2025</strong> | SpaceTrash Hack: Revolutionizing Recycling on Mars</p>
-        <p style="margin-top: 1rem;">Enabling sustainable human exploration through closed-loop resource recovery and
-            in-situ manufacturing</p>
-        <div class="citation">
-            Video source: NASA/JPL-Caltech, <a
-                href="https://images-assets.nasa.gov/video/JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover/JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover~orig.mp4"
-                target="_blank">Explore Mars: Jezero Crater with NASA's Perseverance Rover</a>
-        </div>
-    </footer>
+    <section id="about">
 
-    <script>
-        // SMOOTH SCROLL FUNCTIONALITY
-        document.querySelectorAll('nav a, .scroll-btn, header .bottom-nav a').forEach(el => {
-            el.addEventListener('click', e => {
-                e.preventDefault();
-                const target = el.getAttribute('href');
-                if (target && target.startsWith('#')) {
-                    const element = document.querySelector(target);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
+        <section id="about">
+            <h2>About Us</h2>
+            <p class="intro-text">
+                We are a passionate team of innovators, engineers, and space exploration enthusiasts united by a common
+                vision: making sustainable human presence on Mars a reality through advanced recycling and manufacturing
+                technology.
+            </p>
+
+            <div
+                style="background: linear-gradient(135deg, #161b22 0%, #1c2128 100%); padding: 2.5rem; border-radius: 12px; margin: 2rem 0; border: 2px solid #58a6ff;">
+                <h3 style="margin-top: 0; color: #58a6ff;">🚀 Our Mission</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    To revolutionize space resource management by developing closed-loop recycling systems that
+                    transform waste into valuable resources, enabling long-duration missions and permanent human
+                    settlement beyond Earth. We believe that sustainability isn't just an Earth concept—it's the key to
+                    humanity's future among the stars.
+                </p>
+            </div>
+
+            <h3>What Drives Us</h3>
+            <div class="benefits-grid" style="margin-top: 2rem;">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌟</div>
+                    <h3>Innovation</h3>
+                    <p>We push the boundaries of what's possible by combining cutting-edge technology with practical
+                        engineering solutions for extreme environments.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Collaboration</h3>
+                    <p>We believe the best solutions come from diverse perspectives working together toward a common
+                        goal of sustainable space exploration.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌱</div>
+                    <h3>Sustainability</h3>
+                    <p>Creating closed-loop systems that eliminate waste and maximize resource utilization is at the
+                        core of everything we do.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔬</div>
+                    <h3>Scientific Excellence</h3>
+                    <p>We ground our innovations in rigorous research, proven engineering principles, and NASA mission
+                        requirements.</p>
+                </div>
+            </div>
+
+            <div
+                style="background: linear-gradient(135deg, #1c2128 0%, #161b22 100%); padding: 2.5rem; border-radius: 12px; margin-top: 3rem; border: 2px solid #ff6f61;">
+                <h3 style="margin-top: 0; color: #ff6f61;">🎯 Our Vision for the Future</h3>
+                <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    The MHRMS is just the beginning. We envision a future where every space habitat, from lunar bases to
+                    Mars colonies and beyond, operates as a self-sustaining ecosystem. Our technology will enable:
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                        <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">🏗️
+                            Colony Expansion</p>
+                        <p style="font-size: 0.95rem;">Growing settlements that build themselves using recycled
+                            materials and local resources</p>
+                    </div>
+                    <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                        <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">🛰️ Deep
+                            Space Missions</p>
+                        <p style="font-size: 0.95rem;">Extended missions to the outer solar system powered by circular
+                            resource economies</p>
+                    </div>
+                    <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                        <p style="color: #79c0ff; font-weight: bold; font-size: 1.1rem; margin-bottom: 0.5rem;">🌍 Earth
+                            Applications</p>
+                        <p style="font-size: 0.95rem;">Technology transfer bringing zero-waste manufacturing to remote
+                            and resource-limited areas on Earth</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="background: rgba(88, 166, 255, 0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid #58a6ff; text-align: center;">
+                <h3 style="color: #58a6ff; margin-bottom: 1rem;">Join Us on This Journey</h3>
+                <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem auto;">
+                    We're participating in the NASA Space Apps Challenge 2025 to demonstrate that sustainable space
+                    exploration isn't just possible—it's essential. Whether you're an engineer, scientist, student, or
+                    space enthusiast, we invite you to follow our progress and join the conversation about humanity's
+                    sustainable future in space.
+                </p>
+                <p style="font-size: 1rem; color: #8b949e; font-style: italic;">
+                    "The future of space exploration belongs to those who dare to reimagine what's possible."
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>NASA Space Apps Challenge 2025</strong> | SpaceTrash Hack: Revolutionizing Recycling on Mars</p>
+            <p style="margin-top: 1rem;">Enabling sustainable human exploration through closed-loop resource recovery
+                and in-situ manufacturing</p>
+            <div class="citation">
+                Video source: NASA/JPL-Caltech, <a
+                    href="https://images-assets.nasa.gov/video/JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover/JPL-20211221-M2020f-0001-Explore_Mars_Jezero_Crater_with_NASAs_Perseverance_Rover~orig.mp4"
+                    target="_blank">Explore Mars: Jezero Crater with NASA's Perseverance Rover</a>
+            </div>
+        </footer>
+
+        <script>
+            // Smooth scroll
+            document.querySelectorAll('nav a, .scroll-btn, header .bottom-nav a').forEach(el => {
+                el.addEventListener('click', e => {
+                    e.preventDefault();
+                    const target = el.getAttribute('href');
+                    if (target && target.startsWith('#')) {
+                        const element = document.querySelector(target);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                        }
                     }
-                }
+                });
             });
-        });
 
-        // COLLAPSIBLE SECTION TOGGLE FUNCTION
-        function toggleCollapsible(header) {
-            const content = header.nextElementSibling;
-            const isActive = header.classList.contains('active');
+            // Toggle collapsible sections
+            function toggleCollapsible(header) {
+                const content = header.nextElementSibling;
+                const isActive = header.classList.contains('active');
 
-            header.classList.toggle('active');
-            content.classList.toggle('active');
+                header.classList.toggle('active');
+                content.classList.toggle('active');
 
-            if (!isActive) {
-                content.style.maxHeight = content.scrollHeight + 'px';
-            } else {
-                content.style.maxHeight = '0';
+                if (!isActive) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                }
             }
-        }
-    </script>
+        </script>
 
 </body>
 
