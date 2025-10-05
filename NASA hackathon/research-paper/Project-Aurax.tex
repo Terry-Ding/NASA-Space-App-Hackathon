@@ -922,6 +922,398 @@ Maintenance / Inspection Rover & Check and service MHRMS modules & Tools, replac
 
 This integrated rover fleet design completes the Mars Habitat Recycling-to-Manufacturing System by providing the essential material collection and transport infrastructure. The specialized rover types ensure efficient handling of all waste categories while maintaining the closed-loop, zero-waste philosophy of the overall system.
 
+\section{Detailed Rover Design Specifications}
+
+\subsection{Rover 0 — Shared Electronics Compartment (Baseline)}
+
+\textbf{Purpose:} Standardized "brain box" used across the fleet for parts interchangeability and simplified repairs.
+
+\subsubsection{Core Components}
+\begin{itemize}
+    \item \textbf{CPU:} Onboard computer with edge AI capabilities, real-time operating system
+    \item \textbf{Communication:} 
+    \begin{itemize}
+        \item UHF radio for long-range communication
+        \item Inter-rover mesh Wi-Fi network
+        \item Short-burst X-band to orbit/habitat communications
+    \end{itemize}
+    \item \textbf{Power System:}
+    \begin{itemize}
+        \item Small battery for transit operations
+        \item Hot-dock electrical interface for charging and continuous power
+        \item Power management unit with efficient distribution
+    \end{itemize}
+    \item \textbf{Data Bus:} CAN/ethernet for sensors and actuators integration
+\end{itemize}
+
+\subsubsection{Safety Systems}
+\begin{itemize}
+    \item Emergency stop (E-stop) functionality
+    \item Watchdog timer and watchdog relay to cut actuators in case of failure
+    \item Thermal management: insulation + heater tape for cold starts
+    \item Redundant communication pathways
+\end{itemize}
+
+\subsubsection{Standard Docking Interface}
+\begin{itemize}
+    \item Mechanical latch system with guidance features
+    \item Pogo-pin power/data connectors
+    \item Vacuum seal for sealed material transfer
+    \item Universal compatibility across all rover types
+\end{itemize}
+
+\subsection{Rover 1 — Carbon Collector Rover ("Soot \& Dust Harvester")}
+
+\textbf{Purpose:} Harvest carbon dust, spent activated carbon, CO\textsubscript{2}-extraction byproducts, and organic materials.
+
+\subsubsection{Chassis \& Mobility}
+\begin{itemize}
+    \item Small tracked or 6-wheel rocker-bogie system for soft regolith traversal
+    \item Low center of gravity with wide footprint for stability
+    \item Dimensions: ~1.2 m long × 0.8 m wide × 0.6 m tall
+    \item Mass: 90–130 kg (depending on structure and hopper)
+\end{itemize}
+
+\subsubsection{Collection \& Payload Systems}
+\begin{itemize}
+    \item Front vacuum/blower system with cyclone separator
+    \item Sealed canister with HEPA filtration downstream
+    \item Replaceable fine-dust filter canister
+    \item 20–40 kg sealed carbon hopper capacity
+    \item Electrostatic dust mitigation on exterior ports
+\end{itemize}
+
+\subsubsection{Specialized Subsystems}
+\begin{itemize}
+    \item Advanced dust capture vacuum with cyclone + HEPA filtration
+    \item Fine powder containment with inner bag/cartridge swap mechanism
+    \item Sealed transfer systems to prevent contamination
+\end{itemize}
+
+\subsubsection{Sensors \& Autonomy}
+\begin{itemize}
+    \item LiDAR for navigation and obstacle avoidance
+    \item Stereo cameras for visual recognition
+    \item Optical dust sensors for collection efficiency monitoring
+    \item CO\textsubscript{2} detector for byproduct identification
+    \item AI-powered pattern recognition for carbon accumulation zones
+\end{itemize}
+
+\subsubsection{Docking \& Transfer}
+\begin{itemize}
+    \item Vacuum-tight docking port mating to MHRMS carbon input
+    \item Screw/slide canister insertion mechanism
+    \item Pre-transfer purge and seal testing protocols
+\end{itemize}
+
+\subsection{Rover 2 — Polymer/Plastic/Fabric Collector Rover ("Sorter \& Compactor")}
+
+\textbf{Purpose:} Collect bags, packaging, textiles with pre-sorting and compaction capabilities.
+
+\subsubsection{Chassis \& Mobility}
+\begin{itemize}
+    \item 6-wheel design with suspension for speed across plains
+    \item Medium ground clearance for obstacle negotiation
+    \item Dimensions: ~1.5 m long × 0.9 m wide × 0.8 m tall
+    \item Mass: 120–180 kg
+\end{itemize}
+
+\subsubsection{Collection \& Payload Systems}
+\begin{itemize}
+    \item Multiple modular sealed bins (3–5 compartments) for sorted materials
+    \item Onboard shredder with metal detection interlock
+    \item Compaction system for volume reduction
+    \item Capacity: 40–80 kg mixed materials (compacted)
+\end{itemize}
+
+\subsubsection{Specialized Subsystems}
+\begin{itemize}
+    \item Negative pressure HEPA enclosure for shredding station
+    \item Microplastic containment and prevention systems
+    \item Compaction ram with bagging mechanism
+    \item Vacuum-sealable pouches for material storage
+\end{itemize}
+
+\subsubsection{Sensors \& Autonomy}
+\begin{itemize}
+    \item Camera system with small spectrometer (IR) for polymer identification
+    \item Weight sensors in bins for inventory management
+    \item AI for visual sorting and contamination detection
+    \item Automated material categorization algorithms
+\end{itemize}
+
+\subsubsection{Docking \& Transfer}
+\begin{itemize}
+    \item Bin ejector or sealed cartridge transfer to MHRMS polymer intake
+    \item Quick-release latches for bin swapping by habitat arm
+    \item Automated material handoff protocols
+\end{itemize}
+
+\subsection{Rover 3 — Metal Collector Rover ("Mag-Grab")}
+
+\textbf{Purpose:} Collect ferrous \& non-ferrous scrap, fasteners, broken tools and structural pieces.
+
+\subsubsection{Chassis \& Mobility}
+\begin{itemize}
+    \item Robust 4×4 or tracked system with reinforced bumper
+    \item Low-speed, high-torque drivetrain for debris handling
+    \item Dimensions: ~1.4 m × 1.0 m × 0.9 m
+    \item Mass: 140–200 kg (metal frame adds weight)
+\end{itemize}
+
+\subsubsection{Collection \& Payload Systems}
+\begin{itemize}
+    \item Front magnetic arm with electromagnet (toggle on/off)
+    \item Rear storage with separated trays for different metal types
+    \item Capacity: 30–80 kg of mixed metals
+    \item Lockable storage compartments
+\end{itemize}
+
+\subsubsection{Specialized Subsystems}
+\begin{itemize}
+    \item Magnetic separator for quick sorting
+    \item Small circular shear for cutting protruding bits (safety interlocks)
+    \item Passive shielding for spark protection
+    \item Grinding dust HEPA capture system
+\end{itemize}
+
+\subsubsection{Sensors \& Autonomy}
+\begin{itemize}
+    \item Metal detectors for material identification
+    \item Eddy-current sensor for non-ferrous detection
+    \item LiDAR for obstacle detection and removal planning
+    \item AI for identifying metal objects vs. non-metal materials
+\end{itemize}
+
+\subsubsection{Docking \& Transfer}
+\begin{itemize}
+    \item Sliding tray interface to MHRMS metal hatch
+    \item Mechanical clamp for conduction path and grounding
+    \item Optional robotic arm for bulky item transfer
+\end{itemize}
+
+\subsection{Rover 4 — Composite/Mixed-Material Rover ("Separator")}
+
+\textbf{Purpose:} Handle multi-layer composites, adhesive assemblies, fabric-backed composites with preliminary delamination.
+
+\subsubsection{Chassis \& Mobility}
+\begin{itemize}
+    \item Medium duty 6-wheel system with good maneuverability
+    \item Optimized for operation near habitat structures
+    \item Dimensions: ~1.3 m × 0.9 m × 0.8 m
+    \item Mass: 130–170 kg
+\end{itemize}
+
+\subsubsection{Collection \& Payload Systems}
+\begin{itemize}
+    \item Modular bins for "to be separated" items
+    \item Small thermal pre-treatment bed for adhesive softening
+    \item Capacity: 20–50 kg
+    \item Oscillating shear blades for mechanical separation
+\end{itemize}
+
+\subsubsection{Specialized Subsystems}
+\begin{itemize}
+    \item Thermal bay for low-temperature preheating
+    \item Visual/IR inspection station for material analysis
+    \item Vacuum capture for fibers and micro-particles
+    \item Separation optimization algorithms
+\end{itemize}
+
+\subsubsection{Sensors \& Autonomy}
+\begin{itemize}
+    \item Hyperspectral/IR imaging for resin vs fiber layer detection
+    \item Material composition analysis sensors
+    \item AI routines for processing route decisions:
+    \begin{itemize}
+        \item Carbon-rich materials → Module 1
+        \item Polymer matrix materials → Module 2
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Docking \& Transfer}
+\begin{itemize}
+    \item Sealed cartridges for carbon-rich dust to Module 1
+    \item Polymer matrix cartridges to Module 2 input
+    \item Multi-port transfer capability
+\end{itemize}
+
+\subsection{Rover 5 — Regolith/ISRU Rover ("Digger")}
+
+\textbf{Purpose:} Supply graded regolith to MHRMS for composites, shielding tiles, and ISRU feedstock.
+
+\subsubsection{Chassis \& Mobility}
+\begin{itemize}
+    \item Large excavator-style rover with wide tracks
+    \item Heavy duty construction for bulk material handling
+    \item Dimensions: 2.5–3.5 m long
+    \item Mass: 600–1500+ kg (large vehicle — habitat-supported)
+\end{itemize}
+
+\subsubsection{Collection \& Payload Systems}
+\begin{itemize}
+    \item Front bucket/excavator with dust-sealed hopper
+    \item Sieving unit for particle size grading (coarse vs fine)
+    \item Capacity: 200–500 kg bulk material
+    \item Modular payload options
+\end{itemize}
+
+\subsubsection{Specialized Subsystems}
+\begin{itemize}
+    \item Dust suppression (electrostatic + vibratory sieves)
+    \item Precision dosing cradle for regolith delivery
+    \item Bulk material handling mechanisms
+    \item Soil processing capabilities
+\end{itemize}
+
+\subsubsection{Sensors \& Autonomy}
+\begin{itemize}
+    \item Ground-penetrating radar for subsurface analysis
+    \item LiDAR for terrain mapping and navigation
+    \item Dust sensors for environmental monitoring
+    \item Autonomous excavation planning
+\end{itemize}
+
+\subsubsection{Docking \& Transfer}
+\begin{itemize}
+    \item Large docking port for habitat ring integration
+    \item Bulk transfer to ISRU module conveyor
+    \item Pneumatic gate with double-seal for dust containment
+\end{itemize}
+
+\subsection{Rover 6 — Storage/Transport Rover ("Hauler")}
+
+\textbf{Purpose:} Move processed outputs (spools, ingots, water cartridges) around habitat and to satellite sites.
+
+\subsubsection{Chassis \& Mobility}
+\begin{itemize}
+    \item Flatbed design with adjustable sled
+    \item Wheeled system optimized for speed on flat terrain
+    \item Dimensions: 1.8–2.5 m long
+    \item Mass: 200–400 kg empty
+\end{itemize}
+
+\subsubsection{Collection \& Payload Systems}
+\begin{itemize}
+    \item Quick-swap payload modules (filament rack, ingot crate, water cartridge tray)
+    \item Payload adapter with pogo-pin/sealed door locks
+    \item Capacity: 100–400 kg depending on module
+    \item Versatile cargo configurations
+\end{itemize}
+
+\subsubsection{Specialized Subsystems}
+\begin{itemize}
+    \item Active thermal control for metal payloads
+    \item Locking mechanism with alignment pins
+    \item Payload environmental management
+    \item Inventory tracking systems
+\end{itemize}
+
+\subsubsection{Sensors \& Autonomy}
+\begin{itemize}
+    \item Route planning and optimization algorithms
+    \item Obstacle avoidance systems
+    \item RFID inventory scanning for payloads
+    \item Logistics management AI
+\end{itemize}
+
+\subsubsection{Docking \& Transfer}
+\begin{itemize}
+    \item Standard docking interface for habitat integration
+    \item Payload insertion/withdrawal into habitat lockers
+    \item Automated cargo handling
+\end{itemize}
+
+\subsection{Rover 7 — Maintenance/Inspection Rover ("Medic")}
+
+\textbf{Purpose:} Inspect MHRMS modules, perform minor repairs, replace consumables.
+
+\subsubsection{Chassis \& Mobility}
+\begin{itemize}
+    \item Small, highly maneuverable 4-wheel or tracked system
+    \item Stabilizers for precise operations
+    \item Dimensions: ~1.0 m × 0.8 m × 0.6 m
+    \item Mass: 80–120 kg
+\end{itemize}
+
+\subsubsection{Collection \& Payload Systems}
+\begin{itemize}
+    \item Tool chest (socket set, cutters, spares)
+    \item Weld/tack unit (low-power) for repairs
+    \item Diagnostics kit for system analysis
+    \item 6–7 DOF manipulator arm with interchangeable end-effectors
+\end{itemize}
+
+\subsubsection{Specialized Subsystems}
+\begin{itemize}
+    \item Precision arm with integrated camera and torque sensors
+    \item Dockable spare parts magazine
+    \item Maintenance equipment storage
+    \item Repair capability assessment systems
+\end{itemize}
+
+\subsubsection{Sensors \& Autonomy}
+\begin{itemize}
+    \item High-resolution cameras for detailed inspection
+    \item Thermal imaging for system diagnostics
+    \item Vibration sensors for wear detection
+    \item Predictive maintenance AI for scheduling
+\end{itemize}
+
+\subsubsection{Docking \& Transfer}
+\begin{itemize}
+    \item Maintenance bay docking capability
+    \item Battery swap and charging systems
+    \item Hot-swap parts integration with other rovers
+    \item Tool and component transfer protocols
+\end{itemize}
+
+\section{Common Design \& Engineering Specifications}
+
+\subsection{Materials Selection}
+\begin{itemize}
+    \item \textbf{Chassis:} Aluminum-lithium alloys for strength-to-weight optimization
+    \item \textbf{Covers:} Composite panels for durability and thermal management
+    \item \textbf{Gripper Surfaces:} Stainless steel for abrasion resistance
+    \item \textbf{Protection:} Advanced shielding and coatings for dust abrasion mitigation
+\end{itemize}
+
+\subsection{Seals \& Dust Mitigation}
+\begin{itemize}
+    \item Double-seal approach on all openings for redundancy
+    \item Pre-opening purge systems to prevent contamination
+    \item Magnetic seals on high-use charge and data points
+    \item Comprehensive dust exclusion throughout all systems
+\end{itemize}
+
+\subsection{Standardization Protocols}
+\begin{itemize}
+    \item Identical power/data docking geometry across entire fleet
+    \item Interchangeable electronic components and modules
+    \item Common software architecture and communication protocols
+    \item Unified maintenance and diagnostic interfaces
+\end{itemize}
+
+\subsection{Redundancy \& Safety Systems}
+\begin{itemize}
+    \item Each rover carries minimal emergency toolkit and beacon
+    \item Manual tether systems for emergency retrieval
+    \item Multiple E-stop locations (remote and physical access)
+    \item Thermal cutouts on all heating elements and processing units
+    \item Safety interlocks on all material handling systems
+\end{itemize}
+
+\subsection{Operational Reliability}
+\begin{itemize}
+    \item Designed for continuous operation in Mars environment
+    \item Radiation-hardened electronics where required
+    \item Thermal cycling resilience for extreme temperature variations
+    \item Dust tolerance in all moving parts and seals
+    \item Maintenance-friendly design for crew servicing
+\end{itemize}
+
+This comprehensive rover fleet design ensures complete coverage of all material collection, transport, and maintenance requirements for the Mars Habitat Recycling-to-Manufacturing System. The standardized approach maximizes reliability while minimizing spare parts inventory through component interchangeability.
+
 \section*{Works Cited}
 \begin{itemize}
     \item NASA Mars Facts: \\ \url{https://science.nasa.gov/mars/facts/}
