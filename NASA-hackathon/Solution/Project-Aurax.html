@@ -17,7 +17,8 @@
             background: #0d1117;
             color: #c9d1d9;
             scroll-behavior: smooth;
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 15px;
         }
 
         /* HEADER - FIXED VIDEO */
@@ -102,36 +103,6 @@
             box-shadow: 0 8px 20px rgba(255, 111, 97, 0.6);
         }
 
-        header .bottom-nav {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            z-index: 1;
-            max-width: 90%;
-        }
-
-        header .bottom-nav a {
-            color: #58a6ff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.3s, transform 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            background: rgba(88, 166, 255, 0.1);
-        }
-
-        header .bottom-nav a:hover {
-            color: #ff6f61;
-            transform: translateY(-3px);
-            background: rgba(255, 111, 97, 0.1);
-        }
-
         @keyframes fadeIn {
             to {
                 opacity: 1;
@@ -141,7 +112,7 @@
         /* NAVIGATION */
         nav {
             background: #21262d;
-            padding: 1rem;
+            padding: 0.5rem 1rem;
             display: flex;
             justify-content: center;
             gap: 1.5rem;
@@ -150,6 +121,32 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             flex-wrap: wrap;
+            max-height: 50px;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        nav:hover {
+            max-height: 200px;
+            padding: 1rem;
+        }
+
+        nav::before {
+            content: "☰ Navigation";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #58a6ff;
+            font-weight: bold;
+            font-size: 0.95rem;
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        nav:hover::before {
+            opacity: 0;
         }
 
         nav a {
@@ -160,35 +157,43 @@
             padding: 0.5rem 1rem;
             border-radius: 6px;
             transition: background 0.3s;
+            opacity: 0;
+            transition: opacity 0.3s, background 0.3s;
+        }
+
+        nav:hover a {
+            opacity: 1;
         }
 
         nav a:hover {
             background: rgba(88, 166, 255, 0.1);
         }
 
+
         /* SECTIONS */
         section {
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem;
             border-bottom: 1px solid #30363d;
             max-width: 1200px;
             margin: 0 auto;
+            scroll-margin-top: 60px;
         }
 
         h2 {
             color: #58a6ff;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 1.5rem;
             text-align: center;
         }
 
         h3 {
             color: #79c0ff;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin: 2rem 0 1rem 0;
         }
 
         .intro-text {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-align: center;
             margin-bottom: 3rem;
             color: #e6edf3;
@@ -214,7 +219,7 @@
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #ff6f61;
             font-weight: bold;
             display: block;
@@ -222,7 +227,7 @@
 
         .stat-label {
             color: #8b949e;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-top: 0.5rem;
         }
 
@@ -448,17 +453,6 @@
             <p>Advanced Closed-Loop Resource Recovery & In-Situ Manufacturing for Mars Habitats</p>
             <a href="#overview" class="scroll-btn">Explore System</a>
         </div>
-        <div class="bottom-nav">
-            <a href="#overview">Overview</a>
-            <a href="#scenarios">Challenge</a>
-            <a href="#modules">Modules</a>
-            <a href="#rovers">Rovers</a>
-            <a href="#habitat">Habitat</a>
-            <a href="#benefits">Benefits</a>
-            <a href="#safety">Safety</a>
-            <a href="#references">References</a>
-            <a href="#about">About Us</a>
-        </div>
     </header>
 
     <nav>
@@ -468,10 +462,12 @@
         <a href="#rovers">Rover Fleet</a>
         <a href="#habitat">Habitat Design</a>
         <a href="#benefits">Mission Impact</a>
+        <a href="#nasa">Beyond NASA</a>
         <a href="#safety">Safety & Compliance</a>
         <a href="#references">References</a>
         <a href="#about">About Us</a>
     </nav>
+
 
     <section id="overview">
         <h2>System Overview</h2>
@@ -696,8 +692,8 @@
                     <span class="collapsible-arrow">▶</span>
                     <div>
                         <h3 style="margin: 0; color: #58a6ff;">Module 1: Carbon Processing Station</h3>
-                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">200 kg | 5-10 kg/day | 2-3
-                            kW</p>
+                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">Total Mass: 200 kg | Power:
+                            2-3 kW Required / 3 kW Maximum</p>
                     </div>
                 </div>
             </div>
@@ -710,9 +706,8 @@
                         <p><strong>Outputs:</strong> Carbon-composite filament, activated carbon filters, graphite
                             components, radiation shielding blocks</p>
                         <p><strong>Capacity:</strong> 5-10 kg/day composite filament</p>
-                        <p><strong>Power:</strong> 2-3 kW | <strong>Components:</strong> Ball mill (50kg), compression
-                            press (75kg), heating (25kg), mixing chamber (25kg), extrusion die (15kg), controls (10kg)
-                        </p>
+                        <p><strong>Components:</strong> Ball mill (50kg), compression press (75kg), heating (25kg),
+                            mixing chamber (25kg), extrusion die (15kg), controls (10kg)</p>
                     </div>
                 </div>
             </div>
@@ -722,8 +717,8 @@
                     <span class="collapsible-arrow">▶</span>
                     <div>
                         <h3 style="margin: 0; color: #58a6ff;">Module 2: Polymer Recycling Station</h3>
-                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">240 kg | 5-8 kg/day |
-                            1.5-2.5 kW</p>
+                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">Total Mass: 240 kg | Power:
+                            1.5-2.5 kW Required / 2.5 kW Maximum</p>
                     </div>
                 </div>
             </div>
@@ -736,9 +731,8 @@
                             Control → Spooling</p>
                         <p><strong>Outputs:</strong> PE, PP, EVA, Polyester, Nylon filaments (±0.05mm tolerance)</p>
                         <p><strong>Capacity:</strong> 5-8 kg/day plastic filament</p>
-                        <p><strong>Power:</strong> 1.5-2.5 kW | <strong>Components:</strong> Shredder w/ HEPA (80kg),
-                            heating chamber (60kg), extruder (45kg), sensors (8kg), vapor capture (35kg), spooler (12kg)
-                        </p>
+                        <p><strong>Components:</strong> Shredder w/ HEPA (80kg), heating chamber (60kg), extruder
+                            (45kg), sensors (8kg), vapor capture (35kg), spooler (12kg)</p>
                     </div>
                 </div>
             </div>
@@ -748,8 +742,8 @@
                     <span class="collapsible-arrow">▶</span>
                     <div>
                         <h3 style="margin: 0; color: #58a6ff;">Module 3: Metal Processing Station</h3>
-                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">380 kg | 3-5 kg/day | 3-7
-                            kW</p>
+                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">Total Mass: 380 kg | Power:
+                            3-7 kW Required / 7 kW Maximum</p>
                     </div>
                 </div>
             </div>
@@ -762,9 +756,8 @@
                         <p><strong>Outputs:</strong> Aluminum, steel, copper wire (1.75-2.85mm), metal powders, cast
                             parts</p>
                         <p><strong>Capacity:</strong> 3-5 kg/day metal products</p>
-                        <p><strong>Power:</strong> 3-7 kW | <strong>Components:</strong> Metal shredder (100kg),
-                            induction furnace (150kg), wire dies (40kg), casting molds (30kg), cooling system (25kg),
-                            atomizer optional (35kg)</p>
+                        <p><strong>Components:</strong> Metal shredder (100kg), induction furnace (150kg), wire dies
+                            (40kg), casting molds (30kg), cooling system (25kg), atomizer optional (35kg)</p>
                     </div>
                 </div>
             </div>
@@ -774,8 +767,8 @@
                     <span class="collapsible-arrow">▶</span>
                     <div>
                         <h3 style="margin: 0; color: #58a6ff;">Module 4: Integrated Manufacturing Hub</h3>
-                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">225 kg | 0.5-2 kg/day |
-                            0.5-2 kW</p>
+                        <p style="margin: 0.5rem 0 0 0; color: #8b949e; font-size: 0.95rem;">Total Mass: 225 kg | Power:
+                            0.5-2 kW Required / 2 kW Maximum</p>
                     </div>
                 </div>
             </div>
@@ -789,9 +782,8 @@
                         <p><strong>Outputs:</strong> Tools, utensils, storage containers, habitat components, life
                             support parts, scientific instruments</p>
                         <p><strong>Capacity:</strong> 0.5-2 kg/day finished parts</p>
-                        <p><strong>Power:</strong> 0.5-2 kW | <strong>Components:</strong> FDM plastic printer (35kg),
-                            metal FDM printer (55kg), pellet extruder (40kg), CNC station (60kg), testing equipment
-                            (20kg), post-processing (15kg)</p>
+                        <p><strong>Components:</strong> FDM plastic printer (35kg), metal FDM printer (55kg), pellet
+                            extruder (40kg), CNC station (60kg), testing equipment (20kg), post-processing (15kg)</p>
                     </div>
                 </div>
             </div>
@@ -1069,194 +1061,6 @@
         </div>
     </section>
 
-    <section id="benefits">
-        <h2>Mission Impact & Benefits</h2>
-
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">🚀</div>
-                <h3>Resource Independence</h3>
-                <p>Reduces Earth resupply needs by 60-80%, enabling extended missions and habitat expansion without
-                    additional launches.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">💰</div>
-                <h3>Economic Savings</h3>
-                <p>$1.15M monthly savings per 115 kg recycled. System pays for itself in 2-3 months of operation.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">♻️</div>
-                <h3>True Zero-Waste</h3>
-                <p>96% direct recycling + 4% residual waste combined with MGS-1 regolith = 100% material utilization.
-                </p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">🔧</div>
-                <h3>On-Demand Manufacturing</h3>
-                <p>Create custom tools, replacement parts, and habitat components as needed without waiting for Earth
-                    resupply.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">🌍</div>
-                <h3>CO₂ Utilization</h3>
-                <p>Valuable use for extraction byproducts closes carbon loop in life support and reduces carbon waste
-                    accumulation.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">📈</div>
-                <h3>Scalability</h3>
-                <p>Modular design allows expansion for colony-scale operations and integration with future technologies.
-                </p>
-            </div>
-        </div>
-
-        <h3>Beyond NASA's Approach</h3>
-        <p>While NASA's Trash-to-Supply Gas (TtSG) system produces O₂ and CH₄ for propulsion, our MHRMS extends this
-            capability by also producing solid manufacturing feedstock, enabling true self-sufficiency through complete
-            closed-loop manufacturing rather than just propellant production.</p>
-
-        <div
-            style="background: #161b22; padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid #ff6f61;">
-            <h3 style="margin-top: 0; color: #ff6f61;">⚡ Complete Resource Utilization Analysis</h3>
-
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💡 Energy
-                        Consumption</p>
-                    <p><strong>Peak Power Draw:</strong> 14.5 kW (all modules)</p>
-                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Module 1: 3 kW | Module 2: 2.5
-                        kW<br>Module 3: 7 kW | Module 4: 2 kW</p>
-                    <p style="margin-top: 1rem;"><strong>Daily Energy:</strong> ~200 kWh</p>
-                    <p style="margin-top: 1rem;"><strong>Per kg Processed:</strong> 8 kWh/kg</p>
-                </div>
-
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💧 Water
-                        Consumption</p>
-                    <p><strong>Daily Water Use:</strong> 5-8 liters</p>
-                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Only for polymer/fabric drying
-                        (Module 2)</p>
-                    <p style="margin-top: 1rem;"><strong>Closed-Loop System:</strong> 95% recaptured</p>
-                    <p style="margin-top: 1rem;"><strong>Mission Total:</strong> 274-438 L (3 years)</p>
-                </div>
-
-                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
-                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">👥 Crew Time
-                    </p>
-                    <p><strong>Daily Operation:</strong> 2-3 hours</p>
-                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Loading, monitoring, quality
-                        control</p>
-                    <p style="margin-top: 1rem;"><strong>Weekly Maintenance:</strong> 4-6 hours</p>
-                    <p style="margin-top: 1rem;"><strong>Total Mission Hours:</strong> ~3,500 hours</p>
-                </div>
-            </div>
-
-            <div
-                style="margin-top: 2rem; padding: 1.5rem; background: #0d1117; border-radius: 8px; border-left: 4px solid #3fb950;">
-                <p style="font-size: 1.3rem; font-weight: bold; color: #3fb950; margin-bottom: 1rem;">🎯 Mission
-                    Performance Summary</p>
-                <table style="width: 100%; border-collapse: collapse;">
-                    <tr style="border-bottom: 1px solid #30363d;">
-                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Metric</td>
-                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Mission Requirement</td>
-                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">MHRMS Capacity</td>
-                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Advantage</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #30363d;">
-                        <td style="padding: 0.75rem;">Total Waste</td>
-                        <td style="padding: 0.75rem;">12,600 kg</td>
-                        <td style="padding: 0.75rem; color: #3fb950; font-weight: bold;">27,375 kg max</td>
-                        <td style="padding: 0.75rem; color: #3fb950;">+117% surplus</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #30363d;">
-                        <td style="padding: 0.75rem;">Energy per kg</td>
-                        <td style="padding: 0.75rem;">Minimize</td>
-                        <td style="padding: 0.75rem;">8 kWh/kg</td>
-                        <td style="padding: 0.75rem; color: #3fb950;">Highly efficient</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #30363d;">
-                        <td style="padding: 0.75rem;">Water use</td>
-                        <td style="padding: 0.75rem;">Minimize</td>
-                        <td style="padding: 0.75rem;">274-438 L total</td>
-                        <td style="padding: 0.75rem; color: #3fb950;">Minimal</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #30363d;">
-                        <td style="padding: 0.75rem;">Crew time/day</td>
-                        <td style="padding: 0.75rem;">Minimize</td>
-                        <td style="padding: 0.75rem;">2-3 hours</td>
-                        <td style="padding: 0.75rem; color: #3fb950;">Highly automated</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.75rem;">Material recovery</td>
-                        <td style="padding: 0.75rem;">Maximize</td>
-                        <td style="padding: 0.75rem; color: #3fb950; font-weight: bold;">100%</td>
-                        <td style="padding: 0.75rem; color: #3fb950;">Zero waste</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div
-                style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 111, 97, 0.1); border-radius: 8px; border: 2px solid #ff6f61;">
-                <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💰 Economic & Mission Value</p>
-                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Launch Cost Savings:</strong> $126M
-                    (12,600 kg × $10,000/kg standard planning baseline). Using current Starship projections
-                    (~$100,000/kg) yields $1.26B in avoided launch costs.</p>
-                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>System ROI:</strong> 1,045 kg equipment
-                    cost vs 12,600 kg savings = 12× return</p>
-                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Energy Efficiency:</strong> Processing 1
-                    kg waste on Mars uses 0.01% the energy of launching 1 kg from Earth</p>
-                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Water Efficiency:</strong> Mission water
-                    use (438 L max) equals what crew drinks in 55 days</p>
-                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Crew Productivity:</strong> 3,500 hours
-                    total = 0.3% of mission crew-hours for 100% waste elimination</p>
-                <p
-                    style="font-size: 1.15rem; margin-top: 1.5rem; padding: 1rem; background: #0d1117; border-radius: 6px; color: #3fb950; font-weight: bold;">
-                    Bottom Line: MHRMS delivers 217% processing capacity with minimal resource consumption, achieving
-                    complete waste elimination while enabling on-demand manufacturing—all with a 12× return on equipment
-                    investment.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="safety">
-        <h2>Safety & Compliance</h2>
-        <p class="intro-text">Comprehensive safety systems ensure crew protection and environmental responsibility
-            throughout all operations.</p>
-
-        <div class="compliance-grid">
-            <div class="compliance-item">No incineration or burning - All thermal processing in controlled,
-                non-combustion environment</div>
-            <div class="compliance-item">No toxic emissions - Closed-loop vapor capture with activated carbon filtration
-            </div>
-            <div class="compliance-item">No PFAS generation - System avoids all fluoropolymers and fluorinated compounds
-            </div>
-            <div class="compliance-item">No microplastic release - Sealed grinding with HEPA filtration captures all
-                particles</div>
-            <div class="compliance-item">No wastewater discharge - Dry processing only with closed-loop drying system
-            </div>
-            <div class="compliance-item">Safe for Martian environment - All processes contained with no surface
-                contamination</div>
-            <div class="compliance-item">Minimal crew time - 2-3 hours daily operation with automated processes</div>
-            <div class="compliance-item">Grid-powered efficiency - Uses habitat electrical supply with no separate power
-                generation</div>
-            <div class="compliance-item">Water conservation - Minimal water use with closed-loop recycling</div>
-            <div class="compliance-item">Redundant safety systems - Emergency shutoffs, interlocked access, continuous
-                monitoring</div>
-        </div>
-
-        <h3>Mars Environment Adaptations</h3>
-        <p>Our system leverages Mars' unique conditions as advantages: thin atmosphere prevents oxidation during metal
-            melting, efficient heat rejection in low-pressure environment, and 24.6-hour sols allow extended processing
-            cycles. All modules include thermal management for -153°C to 20°C temperature swings, sealed chambers to
-            capture sublimating volatiles, and dust mitigation systems.</p>
-    </section>
     <section id="habitat">
         <h2>Advanced Modular MHRMS Habitat</h2>
         <p class="intro-text">
@@ -1477,6 +1281,195 @@
         </div>
     </section>
     </section>
+    <section id="benefits">
+        <h2>Mission Impact & Benefits</h2>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <h3>Resource Independence</h3>
+                <p>Reduces Earth resupply needs by 60-80%, enabling extended missions and habitat expansion without
+                    additional launches.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Economic Savings</h3>
+                <p>$1.15M monthly savings per 115 kg recycled. System pays for itself in 2-3 months of operation.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">♻️</div>
+                <h3>True Zero-Waste</h3>
+                <p>96% direct recycling + 4% residual waste combined with MGS-1 regolith = 100% material utilization.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🔧</div>
+                <h3>On-Demand Manufacturing</h3>
+                <p>Create custom tools, replacement parts, and habitat components as needed without waiting for Earth
+                    resupply.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🌍</div>
+                <h3>CO₂ Utilization</h3>
+                <p>Valuable use for extraction byproducts closes carbon loop in life support and reduces carbon waste
+                    accumulation.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <h3>Scalability</h3>
+                <p>Modular design allows expansion for colony-scale operations and integration with future technologies.
+                </p>
+            </div>
+        </div>
+
+        <h3 id="nasa">Beyond NASA's Approach</h3>
+        <p>While NASA's Trash-to-Supply Gas (TtSG) system produces O₂ and CH₄ for propulsion, our MHRMS extends this
+            capability by also producing solid manufacturing feedstock, enabling true self-sufficiency through complete
+            closed-loop manufacturing rather than just propellant production.</p>
+
+        <div
+            style="background: #161b22; padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid #ff6f61;">
+            <h3 style="margin-top: 0; color: #ff6f61;">⚡ Complete Resource Utilization Analysis</h3>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💡 Energy
+                        Consumption</p>
+                    <p><strong>Peak Power Draw:</strong> 14.5 kW (all modules)</p>
+                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Module 1: 3 kW | Module 2: 2.5
+                        kW<br>Module 3: 7 kW | Module 4: 2 kW</p>
+                    <p style="margin-top: 1rem;"><strong>Daily Energy:</strong> ~200 kWh</p>
+                    <p style="margin-top: 1rem;"><strong>Per kg Processed:</strong> 8 kWh/kg</p>
+                </div>
+
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💧 Water
+                        Consumption</p>
+                    <p><strong>Daily Water Use:</strong> 5-8 liters</p>
+                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Only for polymer/fabric drying
+                        (Module 2)</p>
+                    <p style="margin-top: 1rem;"><strong>Closed-Loop System:</strong> 95% recaptured</p>
+                    <p style="margin-top: 1rem;"><strong>Mission Total:</strong> 274-438 L (3 years)</p>
+                </div>
+
+                <div style="background: #0d1117; padding: 1.5rem; border-radius: 8px;">
+                    <p style="color: #79c0ff; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">👥 Crew Time
+                    </p>
+                    <p><strong>Daily Operation:</strong> 2-3 hours</p>
+                    <p style="font-size: 0.9rem; color: #8b949e; margin-top: 0.5rem;">Loading, monitoring, quality
+                        control</p>
+                    <p style="margin-top: 1rem;"><strong>Weekly Maintenance:</strong> 4-6 hours</p>
+                    <p style="margin-top: 1rem;"><strong>Total Mission Hours:</strong> ~3,500 hours</p>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: #0d1117; border-radius: 8px; border-left: 4px solid #3fb950;">
+                <p style="font-size: 1.3rem; font-weight: bold; color: #3fb950; margin-bottom: 1rem;">🎯 Mission
+                    Performance Summary</p>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Metric</td>
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Mission Requirement</td>
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">MHRMS Capacity</td>
+                        <td style="padding: 0.75rem; color: #79c0ff; font-weight: bold;">Advantage</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Total Waste</td>
+                        <td style="padding: 0.75rem;">12,600 kg</td>
+                        <td style="padding: 0.75rem; color: #3fb950; font-weight: bold;">27,375 kg max</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">+117% surplus</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Energy per kg</td>
+                        <td style="padding: 0.75rem;">Minimize</td>
+                        <td style="padding: 0.75rem;">8 kWh/kg</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Highly efficient</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Water use</td>
+                        <td style="padding: 0.75rem;">Minimize</td>
+                        <td style="padding: 0.75rem;">274-438 L total</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Minimal</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #30363d;">
+                        <td style="padding: 0.75rem;">Crew time/day</td>
+                        <td style="padding: 0.75rem;">Minimize</td>
+                        <td style="padding: 0.75rem;">2-3 hours</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Highly automated</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem;">Material recovery</td>
+                        <td style="padding: 0.75rem;">Maximize</td>
+                        <td style="padding: 0.75rem; color: #3fb950; font-weight: bold;">100%</td>
+                        <td style="padding: 0.75rem; color: #3fb950;">Zero waste</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 111, 97, 0.1); border-radius: 8px; border: 2px solid #ff6f61;">
+                <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">💰 Economic & Mission Value</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Launch Cost Savings:</strong> $126M
+                    (12,600 kg × $10,000/kg standard planning baseline). Using current Starship projections
+                    (~$100,000/kg) yields $1.26B in avoided launch costs.</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>System ROI:</strong> 1,045 kg equipment
+                    cost vs 12,600 kg savings = 12× return</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Energy Efficiency:</strong> Processing 1
+                    kg waste on Mars uses 0.01% the energy of launching 1 kg from Earth</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Water Efficiency:</strong> Mission water
+                    use (438 L max) equals what crew drinks in 55 days</p>
+                <p style="font-size: 1.05rem; margin-bottom: 0.75rem;"><strong>Crew Productivity:</strong> 3,500 hours
+                    total = 0.3% of mission crew-hours for 100% waste elimination</p>
+                <p
+                    style="font-size: 1.15rem; margin-top: 1.5rem; padding: 1rem; background: #0d1117; border-radius: 6px; color: #3fb950; font-weight: bold;">
+                    Bottom Line: MHRMS delivers 217% processing capacity with minimal resource consumption, achieving
+                    complete waste elimination while enabling on-demand manufacturing—all with a 12× return on equipment
+                    investment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="safety">
+        <h2>Safety & Compliance</h2>
+        <p class="intro-text">Comprehensive safety systems ensure crew protection and environmental responsibility
+            throughout all operations.</p>
+
+        <div class="compliance-grid">
+            <div class="compliance-item">No incineration or burning - All thermal processing in controlled,
+                non-combustion environment</div>
+            <div class="compliance-item">No toxic emissions - Closed-loop vapor capture with activated carbon filtration
+            </div>
+            <div class="compliance-item">No PFAS generation - System avoids all fluoropolymers and fluorinated compounds
+            </div>
+            <div class="compliance-item">No microplastic release - Sealed grinding with HEPA filtration captures all
+                particles</div>
+            <div class="compliance-item">No wastewater discharge - Dry processing only with closed-loop drying system
+            </div>
+            <div class="compliance-item">Safe for Martian environment - All processes contained with no surface
+                contamination</div>
+            <div class="compliance-item">Minimal crew time - 2-3 hours daily operation with automated processes</div>
+            <div class="compliance-item">Grid-powered efficiency - Uses habitat electrical supply with no separate power
+                generation</div>
+            <div class="compliance-item">Water conservation - Minimal water use with closed-loop recycling</div>
+            <div class="compliance-item">Redundant safety systems - Emergency shutoffs, interlocked access, continuous
+                monitoring</div>
+        </div>
+
+        <h3>Mars Environment Adaptations</h3>
+        <p>Our system leverages Mars' unique conditions as advantages: thin atmosphere prevents oxidation during metal
+            melting, efficient heat rejection in low-pressure environment, and 24.6-hour sols allow extended processing
+            cycles. All modules include thermal management for -153°C to 20°C temperature swings, sealed chambers to
+            capture sublimating volatiles, and dust mitigation systems.</p>
+    </section>
+
 
     <section id="references">
         <h2>References & Technical Foundation</h2>
@@ -1494,11 +1487,13 @@
                     & Mission Requirements</p>
                 <ol style="margin-left: 1.5rem; line-height: 1.8;">
                     <li><strong>NASA (2022).</strong> "Trash-to-Supply Gas (TtSG) Technology for Mars Missions."
-                        <em>NASA Technology Roadmaps.</em> Kennedy Space Center, FL.</li>
+                        <em>NASA Technology Roadmaps.</em> Kennedy Space Center, FL.
+                    </li>
                     <li><strong>Broyan, J.L., et al. (2016).</strong> "International Space Station Waste Streams and
                         Recycling Options." <em>AIAA SPACE Forum.</em> DOI: 10.2514/6.2016-5479</li>
                     <li><strong>NASA (2020).</strong> "Mars Design Reference Architecture 5.0."
-                        <em>NASA/SP-2009-566.</em> Human Exploration and Operations Mission Directorate.</li>
+                        <em>NASA/SP-2009-566.</em> Human Exploration and Operations Mission Directorate.
+                    </li>
                     <li><strong>Hanford, A.J. (2004).</strong> "Advanced Life Support Baseline Values and Assumptions
                         Document." <em>NASA/CR-2004-208941.</em> Johnson Space Center.</li>
                 </ol>
@@ -1545,7 +1540,8 @@
                     <li><strong>Nesnas, I.A., et al. (2021).</strong> "Autonomous Exploration of Small Bodies." <em>Acta
                             Astronautica.</em> 183: 243-255.</li>
                     <li><strong>Kubota, T., et al. (2020).</strong> "Mars Rover Autonomy: Past, Present, and Future."
-                        <em>Journal of Field Robotics.</em> 37(4): 572-596.</li>
+                        <em>Journal of Field Robotics.</em> 37(4): 572-596.
+                    </li>
                     <li><strong>Ono, M., et al. (2016).</strong> "MAARS: Machine Learning-Based Analytics for Automated
                         Rover Systems." <em>IEEE Aerospace Conference.</em> DOI: 10.1109/AERO.2016.7500772</li>
                 </ol>
