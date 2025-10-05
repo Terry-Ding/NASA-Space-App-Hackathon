@@ -624,6 +624,304 @@ This integrated recycling-to-manufacturing system transforms Mars habitat waste�
 
 \textbf{Ready for Development:} All core technologies proven; integration and Mars-specific optimization required before deployment.
 
+\section{Mars Material Collection Rover Fleet Design}
+
+\subsection{Rover Types and Roles}
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{p{0.2\textwidth} p{0.35\textwidth} p{0.4\textwidth}}
+\toprule
+\textbf{Rover Type} & \textbf{Purpose / Role} & \textbf{Collected Material} \\
+\midrule
+Carbon Collector Rover & Gather carbon-based materials for composite filament and carbon products & CO\textsubscript{2} extraction byproducts, activated carbon filters, carbon dust, organic waste \\[0.5em]
+
+Polymer/Plastic Collector Rover & Collect polymers and fabrics for Module 2 recycling & Nitrile gloves, EVA waste, PE/PP packaging, tape/labels, cotton/polyester/nylon clothing, wipes, food packaging \\[0.5em]
+
+Metal Collector Rover & Collect metals for wire, rods, powder, and casting & Broken tools, fasteners, electronics casings, aluminum structures \\[0.5em]
+
+Composite/Mixed Material Rover & Collect difficult-to-sort or multi-material items & Adhesive-bonded assemblies, fabric-backed composites, polymer-matrix carbon fiber \\[0.5em]
+
+Regolith / ISRU Rover & Supply regolith for manufacturing, shielding, and carbon-regolith composites & Martian soil, regolith for ceramics, carbon-regolith mixes \\[0.5em]
+
+Storage / Transport Rover & Transport collected materials to MHRMS modules & Any collected material \\[0.5em]
+
+Maintenance / Inspection Rover & Check and service MHRMS modules & Tools, replacement parts, consumables \\
+\bottomrule
+\end{tabular}
+\caption{Rover Types and Their Specific Roles in Material Collection}
+\end{table}
+
+\normalsize
+
+\subsection{Rover Specifications and Features}
+
+\subsubsection{Carbon Collector Rover}
+\begin{itemize}
+    \item Shovel/vacuum attachment for efficient collection
+    \item Pressurized, sealed storage to capture fine carbon dust
+    \item Automated sorting for polymer binders if present
+    \item Mass: 150 kg
+    \item Power: 2 kW continuous during operation
+\end{itemize}
+
+\subsubsection{Polymer/Plastic/Fabric Collector Rover}
+\begin{itemize}
+    \item Pre-sorting capability to remove metal bits and contamination
+    \item Onboard shredding/compaction capability
+    \item Closed storage system to prevent microplastic release
+    \item Mass: 180 kg
+    \item Power: 2.5 kW during shredding operations
+\end{itemize}
+
+\subsubsection{Metal Collector Rover}
+\begin{itemize}
+    \item Magnetic separation for ferrous/non-ferrous metals
+    \item Insulated storage compartments
+    \item Carbon-fiber polymer separation capability
+    \item Mass: 200 kg
+    \item Power: 3 kW during magnetic separation
+\end{itemize}
+
+\subsubsection{Composite/Mixed Material Rover}
+\begin{itemize}
+    \item Flexible, modular bins for varied material types
+    \item Visual recognition system for proper storage categorization
+    \item Pre-processing separation flags for Modules 1 \& 2
+    \item Mass: 170 kg
+    \item Power: 2.2 kW continuous
+\end{itemize}
+
+\subsubsection{Regolith / ISRU Rover}
+\begin{itemize}
+    \item Excavator with dust-mitigation storage system
+    \item Precision dosing for Module 1 \& 4 applications
+    \item Soil composition analysis sensors
+    \item Mass: 220 kg
+    \item Power: 3.5 kW during excavation
+\end{itemize}
+
+\subsubsection{Storage / Transport Rover}
+\begin{itemize}
+    \item Modular compartments with sealed docking interface
+    \item Protection from material contamination or sublimation
+    \item Adaptable to interface with all collection rovers
+    \item Mass: 190 kg
+    \item Power: 1.5 kW during transport
+\end{itemize}
+
+\subsubsection{Maintenance / Inspection Rover}
+\begin{itemize}
+    \item Light-load chassis for maneuverability
+    \item Precision mobility system
+    \item Robotic arm for module repair or replacement
+    \item System performance monitoring and crew alerting
+    \item Mass: 120 kg
+    \item Power: 1.8 kW during maintenance operations
+\end{itemize}
+
+\subsection{Standard Electronics Compartment (All Rovers)}
+
+\subsubsection{Power System}
+\begin{itemize}
+    \item Li-ion batteries (10-20 kWh capacity)
+    \item Backup power from habitat electrical grid when docked
+    \item Power distribution bus with overcurrent protection
+    \item Solar charging capability for extended missions
+\end{itemize}
+
+\subsubsection{Control System}
+\begin{itemize}
+    \item Central CPU/microcontroller for autonomous operations
+    \item Motor controllers and robotic arm interface
+    \item Integration with MHRMS module scheduling software
+    \item Redundant processing units for critical functions
+\end{itemize}
+
+\subsubsection{Communication Systems}
+\begin{itemize}
+    \item UHF/X-band relay for Mars orbital communication
+    \item Inter-rover Wi-Fi mesh network
+    \item Inertial + orbital localization systems
+    \item Redundant communication pathways
+\end{itemize}
+
+\subsubsection{Sensor Suite}
+\begin{itemize}
+    \item Visual + IR cameras for navigation and inspection
+    \item LiDAR for precise mapping and obstacle avoidance
+    \item Material-specific sensors: CO\textsubscript{2} detection, metal sensors, dust sensors
+    \item Environmental monitoring: temperature, pressure, radiation levels
+\end{itemize}
+
+\subsubsection{Autonomy \& AI}
+\begin{itemize}
+    \item Edge AI for autonomous path planning and material detection
+    \item Machine learning algorithms for optimal collection routes
+    \item Optional human override from habitat or rover hub
+    \item Automated docking to MHRMS modules
+\end{itemize}
+
+\subsubsection{Safety \& Redundancy}
+\begin{itemize}
+    \item Thermal insulation for Mars temperature extremes (-153°C to 20°C)
+    \item Overcurrent and voltage monitoring with automatic shutdown
+    \item Emergency stop for all motors and robotic arms
+    \item Redundant power and communication systems
+\end{itemize}
+
+\subsubsection{Storage Interface}
+\begin{itemize}
+    \item Modular, sealed compartments for material categories:
+    \begin{itemize}
+        \item Carbon materials compartment
+        \item Polymers/Fabrics storage
+        \item Metals collection bins
+        \item Composites handling system
+        \item Regolith storage and transport
+    \end{itemize}
+\end{itemize}
+
+\subsection{Rover-to-MHRMS Workflow}
+
+\subsubsection{Collection Phase}
+\begin{enumerate}
+    \item Rovers autonomously gather assigned materials based on MHRMS production schedule
+    \item Onboard pre-sorting and contamination removal
+    \item Real-time material quality assessment and reporting
+    \item Storage in categorized, sealed compartments
+\end{enumerate}
+
+\subsubsection{Transport Phase}
+\begin{itemize}
+    \item Storage/transport rovers coordinate material delivery to appropriate MHRMS modules
+    \item Automated docking with Module 1-4 input ports
+    \item Material transfer with minimal exposure to Mars environment
+    \item Inventory update to central management system
+\end{itemize}
+
+\subsubsection{Maintenance Phase}
+\begin{itemize}
+    \item Maintenance/inspection rovers perform continuous system monitoring
+    \item Automated minor repairs and component replacement
+    \item Performance data collection and analysis
+    \item Crew notification for complex maintenance requirements
+\end{itemize}
+
+\subsubsection{Processing Phase}
+\begin{itemize}
+    \item MHRMS modules process delivered materials according to scheduled production
+    \item Real-time adjustment of processing parameters based on material quality
+    \item Quality control feedback to collection rovers for future improvements
+\end{itemize}
+
+\subsubsection{Data Feedback Loop}
+\begin{itemize}
+    \item Continuous communication of material inventory and quality status
+    \item Location tracking and task assignment optimization
+    \item Performance metrics for system manager scheduling
+    \item Predictive maintenance based on operational data
+\end{itemize}
+
+\subsection{Advantages of the Integrated Rover Fleet}
+
+\subsubsection{Modular Design Benefits}
+\begin{itemize}
+    \item Fully modular design allows fleet expansion or redeployment for new MHRMS modules
+    \item Standardized interfaces enable rover interoperability
+    \item Scalable from initial mission to full colony operations
+\end{itemize}
+
+\subsubsection{Material Handling Capabilities}
+\begin{itemize}
+    \item Comprehensive coverage of all waste material categories
+    \item Specialized handling for fabrics, food packaging, EVA materials, and metals
+    \item Integration with revised MHRMS scope and processing requirements
+\end{itemize}
+
+\subsubsection{Environmental Protection}
+\begin{itemize}
+    \item Closed storage systems prevent material loss and water sublimation
+    \item Dust mitigation systems protect both equipment and Martian environment
+    \item Microplastic contamination prevention through sealed operations
+\end{itemize}
+
+\subsubsection{Power and Efficiency}
+\begin{itemize}
+    \item Grid-powered operation eliminates solar panel dependency
+    \item Efficient power management for extended mission duration
+    \item Reduced reliance on battery systems for long-term MHRMS integration
+\end{itemize}
+
+\subsubsection{Mission Sustainability}
+\begin{itemize}
+    \item Enables complete closed-loop resource recovery system
+    \item Drastically reduces Earth resupply requirements (60-80\% reduction)
+    \item Supports permanent settlement through continuous resource cycling
+\end{itemize}
+
+\subsubsection{Maintainability and Upgrades}
+\begin{itemize}
+    \item Standardized electronics compartment ensures easy maintenance
+    \item Interoperability between rover systems
+    \item Future upgrade capability as technology advances
+    \item Modular component replacement reduces spare part requirements
+\end{itemize}
+
+\subsection{Fleet Performance Metrics}
+
+\subsubsection{Collection Capacity}
+\begin{itemize}
+    \item Total daily collection capacity: 50-80 kg across all material categories
+    \item Individual rover capacity: 5-15 kg per operational cycle
+    \item Collection efficiency: >90\% of available materials
+    \item Contamination rate: <2\% of collected materials
+\end{itemize}
+
+\subsubsection{Operational Parameters}
+\begin{itemize}
+    \item Operational range: 5 km from habitat base
+    \item Autonomous operation duration: 8-12 hours per charge
+    \item Communication latency: <5 seconds within operational range
+    \item Task completion rate: >95\% of assigned collection tasks
+\end{itemize}
+
+\subsubsection{Reliability Metrics}
+\begin{itemize}
+    \item Mean Time Between Failures (MTBF): >2,000 operational hours
+    \item Maintenance interval: 500 hours of operation
+    \item System availability: >95\% during mission critical periods
+    \item Redundancy coverage: 100\% for critical systems
+\end{itemize}
+
+\subsection{Integration with MHRMS Operations}
+
+\subsubsection{Coordinated Scheduling}
+\begin{itemize}
+    \item Real-time coordination between rover collection and MHRMS processing schedules
+    \item Dynamic task assignment based on material availability and production needs
+    \item Priority-based collection for critical manufacturing requirements
+\end{itemize}
+
+\subsubsection{Quality Control Integration}
+\begin{itemize}
+    \item Material quality assessment during collection phase
+    \item Feedback loops to optimize collection parameters
+    \item Continuous improvement of sorting and handling protocols
+\end{itemize}
+
+\subsubsection{Emergency Response}
+\begin{itemize}
+    \item Rapid deployment for emergency material requirements
+    \item Backup collection capability for system failures
+    \item Contingency planning for extreme weather events
+\end{itemize}
+
+This integrated rover fleet design completes the Mars Habitat Recycling-to-Manufacturing System by providing the essential material collection and transport infrastructure. The specialized rover types ensure efficient handling of all waste categories while maintaining the closed-loop, zero-waste philosophy of the overall system.
+
 \section*{Works Cited}
 \begin{itemize}
     \item NASA Mars Facts: \\ \url{https://science.nasa.gov/mars/facts/}
