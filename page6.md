@@ -24,3 +24,52 @@ Waste Behavior in Mars Environment
         - Waste heat recovery: Capture heat from processing for habitat use
         - Phase-change thermal buffers: Smooth out temperature fluctuations
 
+## Alternative Waste Processing Options (NASA Research)
+1. Option A: Partial Processing to Mixed Gases: 
+NASA's "Trash-to-Gas" (TtG) Approach: Process waste in primary reactor only, producing mixed gases:
+    - 10% H₂, 22% CO, 68% CO₂
+    - Can be used in resistojet thrusters (134.3 sec Isp)
+    - Requires 0.28 kg/crew-day makeup water
+Benefits:
+    - Simpler system (fewer processing steps)
+    - Can provide station-keeping propulsion
+    - Lower energy requirements
+Limitations:
+    - Lower-quality propellant (vs. pure O₂/CH₄)
+    - Still requires makeup water
+    - Limited manufacturing applications
+2. Option B: Full Processing to High-Quality Propellants (**RECOMMENDED**)
+NASA's "Trash-to-Supply Gas" (TtSG) - Our Baseline: Complete processing through secondary reactors:
+    - 59% O₂, 41% CH₄ (optimal rocket propellant)
+    - Can achieve 250+ sec Isp in rocket engines
+    - Enables both propulsion AND manufacturing uses
+    - Requires 0.15 kg/crew-day makeup water (less than TtG)
+Our Enhanced System: We extend TtSG concept by:
+    - Adding 3D printing filament production
+    - Integrating regolith processing (ISRU)
+    - Creating complete closed-loop manufacturing
+    - Producing solid products, not just gases
+NASA-Proven Benefits:
+    - LEO mass savings: Every kg processed at Mars saves 3.34 kg launch mass from Earth (chemical transfer) or 1.35 kg (SEP transfer)
+    - Mission augmentation: Waste-to-propellant enables lunar lander missions, extended operations, emergency maneuvers
+    - For 990 kg propellant (180-day mission): Saves 1,340-3,300 kg launch mass from Earth
+
+3. Why Our System Goes Beyond NASA's Approach
+NASA TtSG (gases only):
+    - Produces O₂ and CH₄ for propulsion
+    - Vents excess gases or stores in tanks
+    - Limited to propellant applications
+Our Integrated System (gases + solids + ISRU):
+    - Processes waste into filament AND propellant gases
+    - Combines with regolith to create metals, glass, ceramics
+    - 3D prints replacement parts, tools, habitat components
+    - Enables true self-sufficiency vs. just propellant production
+    - Creates complete manufacturing economy
+Result: Our system achieves everything NASA's TtSG does PLUS enables permanent settlement through manufacturing capability
+Modules:
+1. Carbon processing station
+    - grinding --> binder preparation --> mixing --> extrusion --> spooling
+2. polymer recycling station
+    - material preparation --> size reduction --> drying (if needed) --> melting --> filtration --> extrusion --> cooling & diameter control --> quality control --> spooling
+3. Metal processing station
+    - shredding --> melting --> casting --> wire drawing --> quality control --> spooling
