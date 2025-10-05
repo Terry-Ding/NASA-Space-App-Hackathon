@@ -59,6 +59,73 @@ Must be buildable by no more than eight people & Number of people required for t
     \item Solutions must not be too complicated to implement.
 \end{itemize}
 
+\section{Our Solution}
+Mars Habitat Recycling-to-Manufacturing System (MHRMS)
+\subsection{Purpose}
+This system is designed to convert waste materials from
+Mars habitat operations into usable 3D printing filament and
+manufacturing feedstock, with emphasis on CO2 extraction 
+byproducts. 
+
+\subsection{Design Philofophy}
+\begin{itemize}
+    \item Modular
+    \item relocatable
+    \item powered by habitat frid
+    \item zero-waste discharge
+\end{itemize}
+
+\subsection{Mars Environment Context}
+\begin{enumerate}
+    \item Mars has a thin atmosphere made up mostly of carbon dioxide, nitrogen, and argon gases, with temperatures ranging from 70°F (20°C) to -225°F (-153°C)
+    \item Mars' sparse atmosphere doesn't offer much protection from impacts by meteorites and the thin atmosphere causes heat from the Sun to easily escape
+    \item Dust storms can cover much of the planet, sometimes taking months for all dust to settle
+    \item Mars completes one rotation every 24.6 hours (a "sol"), with a year lasting 687 Earth days
+    \item These conditions directly impact recycling system design: thermal management is critical, dust mitigation essential
+\end{enumerate}
+
+\subsection{Design Considerations}
+Waste behavior in Mars Environment
+\begin{enumerate}
+    \item Vacuum Exposure Challenges: Based on NASA Glenn Research Center analysis of waste behavior when exposed to vacuum
+    \item Water Sublimation: When waste is exposed to Mars' near-vacuum conditions (0.6\% Earth pressure), approximately 20\% of water content will sublimate before the waste completely freezes. This process takes:
+    \begin{itemize}
+        \item Small items (3mm droplets): ~7 seconds to freeze
+        \item Standard waste "football" (20cm compressed bundle): ~3.4 hours to freeze
+    \end{itemize}
+    \item Implications for recycling system:
+    \begin{enumerate}
+        \item Pre-processing must handle both frozen and partially sublimated materials
+        \item Vapor capture systems required to prevent water loss during initial processing
+        \item Grinding chambers must be sealed to capture sublimating volatiles
+        \item Temperature control critical: waste arriving at facility may be frozen solid (-153°C from overnight exposure)
+    \end{enumerate}
+    \item Thermal management on mars
+    \begin{enumerate}
+        \item Challenge: Mars temperature swings from 70°F (20°C) to -225°F (-153°C)
+        \item Solution:
+        \begin{itemize}
+            \item Insulated processing chambers: Maintain optimal processing temperatures (150-1400°C depending on module)
+            \item Pre-heating systems: Thaw frozen waste before processing
+            \item Waste heat recovery: Capture heat from processing for habitat use
+            \item Phase-change thermal buffers: Smooth out temperature fluctuations
+        \end{itemize}
+    \end{enumerate}
+    \item Mars sol adaptation
+    \begin{enumerate}
+        \item Mars day: 24.6 hours VS Earth's 24 hours
+        \item Operational impact:
+        \begin{itemize}
+            \item Processing schedules calibrated to Mars sols
+            \item Automation advantage: rovers and processing continue during crew sleep cycles
+            \item Benefit: Extra 39 minutes per sol allows for extended processing cycles
+        \end{itemize}
+    \end{enumerate}
+
+\end{enumerate}
+
+\noindent\textit{Source:} \href{https://science.nasa.gov/mars/facts/}{NASA Mars Facts}.
+
 \newpage 
 \section*{Works Cited}
 \begin{itemize}
