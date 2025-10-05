@@ -9,13 +9,15 @@
 \usepackage{booktabs}
 \usepackage{array} % for better column formatting
 \usepackage{enumitem}
+\usepackage{float}
+\usepackage{caption}
 
 % --- Page setup ---
 \geometry{margin=1in}
 
 \title{\textbf{Mars Habitat Resource Recycling \& Manufacturing System}}
 \author{%
-    \textbf{Team Name:} Project Aura\textquotesingle x \\[0.3em]
+    \textbf{Team Name:} Project Aurax \\[0.3em]
     \textbf{Members:} 
 }
 \date{\today}
@@ -614,16 +616,6 @@ Based on ISS and shuttle waste studies, daily waste generation averages 1.45 kg 
     \item Water conservation - Minimal water use in drying processes only; closed-loop system
 \end{itemize}
 
-\section{Conclusion}
-
-This integrated recycling-to-manufacturing system transforms Mars habitat waste—including fabrics, food packaging, foam, EVA materials, aluminum structures, and carbon from CO2 extraction—into valuable 3D printing feedstock and finished products. The modular design is powered by the habitat's electrical grid and optimized for Mars conditions while maintaining crew safety and environmental responsibility.
-
-\textbf{Key Innovation:} Leveraging Mars's unique environment (thin atmosphere, low pressure) as advantages rather than obstacles, while processing a comprehensive range of waste materials into useful end products.
-
-\textbf{Mission Impact:} Enables long-duration Mars missions by creating a closed-loop resource economy, reducing Earth dependency, and providing on-demand manufacturing capability for tools, utensils, storage containers, interior habitat outfitting, and habitat expansion.
-
-\textbf{Ready for Development:} All core technologies proven; integration and Mars-specific optimization required before deployment.
-
 \section{Mars Material Collection Rover Fleet Design}
 
 \subsection{Rover Types and Roles}
@@ -919,8 +911,6 @@ Maintenance / Inspection Rover & Check and service MHRMS modules & Tools, replac
     \item Backup collection capability for system failures
     \item Contingency planning for extreme weather events
 \end{itemize}
-
-This integrated rover fleet design completes the Mars Habitat Recycling-to-Manufacturing System by providing the essential material collection and transport infrastructure. The specialized rover types ensure efficient handling of all waste categories while maintaining the closed-loop, zero-waste philosophy of the overall system.
 
 \section{Detailed Rover Design Specifications}
 
@@ -1312,13 +1302,322 @@ This integrated rover fleet design completes the Mars Habitat Recycling-to-Manuf
     \item Maintenance-friendly design for crew servicing
 \end{itemize}
 
-This comprehensive rover fleet design ensures complete coverage of all material collection, transport, and maintenance requirements for the Mars Habitat Recycling-to-Manufacturing System. The standardized approach maximizes reliability while minimizing spare parts inventory through component interchangeability.
+\section{Special Controlled Environment Habitat for MHRMS \& Rover Fleet}
+
+\subsection{Mission \& Design Philosophy}
+
+\subsubsection{Mission Statement}
+Provide a dedicated, fully controlled habitat for material collection, recycling, processing, manufacturing, and fleet operations on Mars. Ensure high operational efficiency, safety, minimal crew involvement, and expansion potential.
+
+\subsubsection{Design Goals}
+\begin{itemize}
+    \item Fully modular \& relocatable architecture
+    \item Integrated habitat electrical grid powered operations
+    \item Closed-loop environmental control (air, water, temperature, dust)
+    \item Automated and remote-monitorable systems
+    \item Future-proof for additional modules, manufacturing technologies, or new rover types
+    \item Maintainable with minimal crew intervention
+\end{itemize}
+
+\subsection{Habitat Structural Layout}
+
+\subsubsection{Core Structural Design}
+
+\textbf{Central Spine Module:}
+\begin{itemize}
+    \item Main access corridor and control hub
+    \item Houses central control servers, environmental monitoring, and power distribution
+    \item Acts as backbone connecting all modules
+\end{itemize}
+
+\textbf{Modular Side Pods:}
+\begin{itemize}
+    \item Each side pod hosts specific MHRMS modules (1-4) or storage
+    \item Docking and maintenance bays at ends for rovers
+    \item Pass-through corridors allow robotic and automated transfer between modules
+\end{itemize}
+
+\textbf{Construction Specifications:}
+\begin{itemize}
+    \item Pressurized aluminum-lithium alloy shell with multilayer insulation
+    \item Internal vibration dampers for sensitive manufacturing/filtration equipment
+    \item Expandable docking rings for new modules or rover types
+\end{itemize}
+
+\subsubsection{Zones \& Modules}
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.4}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{p{0.3\textwidth} p{0.65\textwidth}}
+\toprule
+\textbf{Zone} & \textbf{Purpose and Features} \\
+\midrule
+MHRMS Processing Pods & 
+\begin{itemize}
+\setlength\itemsep{0.1em}
+\item Modules 1-4 operations
+\item Negative-pressure grinding chambers
+\item High-temperature melting/extrusion zones
+\item Filtration and vapor capture systems
+\item Automated material transfer between modules
+\end{itemize} \\[1em]
+
+Rover Docking \& Maintenance Bays &
+\begin{itemize}
+\setlength\itemsep{0.1em}
+\item Fleet operations center
+\item 1 bay per rover type (7 total)
+\item Automated docking, charging, data synchronization
+\item Robotic maintenance arms for repairs
+\item Sealed transfer ports for material handling
+\end{itemize} \\[1em]
+
+Material Storage \& Sorting Pods &
+\begin{itemize}
+\setlength\itemsep{0.1em}
+\item Waste storage and pre-processing
+\item Category-based storage (Carbon, Polymers, Metals, Fabrics, Regolith)
+\item Climate-controlled for sublimation-sensitive materials
+\item Automated conveyors and robotic handling systems
+\end{itemize} \\[1em]
+
+Manufacturing Pod &
+\begin{itemize}
+\setlength\itemsep{0.1em}
+\item 3D printing and post-processing
+\item FDM plastic/composite printing stations
+\item Metal filament and powder printing capabilities
+\item CNC machining and finishing equipment
+\item Quality control and storage racks for finished products
+\end{itemize} \\[1em]
+
+Future Expansion Rings &
+\begin{itemize}
+\setlength\itemsep{0.1em}
+\item Accommodation for future modules
+\item Empty docking and pass-through ports
+\item Flexible power and environmental interfaces
+\item Prewired for robotics or new processing technologies
+\end{itemize} \\
+\bottomrule
+\end{tabular}
+\caption{Habitat Zones and Their Functions}
+\end{table}
+\normalsize
+
+\subsection{Environmental \& Habitat Controls}
+
+\subsubsection{Atmosphere Management}
+\begin{itemize}
+    \item Pressurized to 101 kPa (Earth standard)
+    \item Oxygen/Nitrogen mix maintained at optimal levels
+    \item CO\textsubscript{2} scrubbers and VOC filters (linked to Module 1 carbon processing)
+    \item HEPA filtration for microplastics and dust control
+    \item Airlocks with dust mitigation systems for rover entry/exit
+\end{itemize}
+
+\subsubsection{Thermal \& Energy Systems}
+\begin{itemize}
+    \item Habitat insulation maintains 20°C ±5°C operational temperature
+    \item Local heating/cooling for processing modules: 150-1400°C zones as required
+    \item Waste heat recycled from high-temperature operations to preheat incoming modules
+    \item Phase-change thermal buffers to smooth out Mars sol temperature cycles
+    \item Grid-powered with redundancy for each pod
+\end{itemize}
+
+\subsubsection{Water \& Humidity Control}
+\begin{itemize}
+    \item Closed-loop water system for polymer/fabric drying processes
+    \item Minimal water consumption design philosophy
+    \item Vapor recapture and reuse systems
+    \item Humidity maintained at 40-50\% in sensitive manufacturing zones
+\end{itemize}
+
+\subsubsection{Dust \& Contamination Control}
+\begin{itemize}
+    \item Negative-pressure chambers for all grinding and shredding operations
+    \item Rover docking systems sealed to prevent dust escape
+    \item Automated HEPA and activated carbon filtration in all pods
+    \item Contaminants returned to processing streams whenever possible
+\end{itemize}
+
+\subsection{Rover Integration}
+
+\subsubsection{Docking Bay Design Features}
+\begin{itemize}
+    \item Automated charging interface (grid-powered)
+    \item Material transfer ports connected to storage pods
+    \item Robotic arms for minor repairs and module replacement
+    \item Environmental status sensors and operational health monitoring
+    \item Designated pathways for autonomous navigation within habitat
+\end{itemize}
+
+\subsubsection{Supported Rover Types}
+\begin{itemize}
+    \item Carbon collector rover
+    \item Polymer/Plastic collector rover
+    \item Metal collector rover
+    \item Composite/Mixed-material collector rover
+    \item Regolith/ISRU rover
+    \item Storage/Transport rover
+    \item Maintenance/Inspection rover
+\end{itemize}
+
+\subsection{Workflow (Automated \& Modular)}
+
+\subsubsection{Material Collection Phase}
+\begin{itemize}
+    \item Rovers gather materials from external environment
+    \item Automated docking at designated bays
+    \item Material deposition into categorized storage pods
+\end{itemize}
+
+\subsubsection{Material Sorting \& Pre-processing}
+\begin{itemize}
+    \item Automated conveyors and robotic arms sort materials by category
+    \item Pre-processing operations: grinding, drying, shredding
+    \item Quality assessment and contamination removal
+\end{itemize}
+
+\subsubsection{Processing Operations}
+\begin{itemize}
+    \item Modules 1-3 handle carbon, polymer/fabric, and metal processing
+    \item Filament and powder production with quality control
+    \item Continuous material flow between processing stages
+\end{itemize}
+
+\subsubsection{Manufacturing Operations}
+\begin{itemize}
+    \item Module 4 manages 3D printing of finished products
+    \item Production includes: tools, replacement parts, habitat components
+    \item CNC finishing ensures adherence to design tolerances
+\end{itemize}
+
+\subsubsection{Rover Maintenance \& Support}
+\begin{itemize}
+    \item Maintenance/inspection rovers handle minor repairs
+    \item Automated monitoring systems detect anomalies
+    \item Preventive maintenance scheduling
+\end{itemize}
+
+\subsubsection{Future Expansion Capabilities}
+\begin{itemize}
+    \item New processing modules can be integrated seamlessly
+    \item Advanced manufacturing technologies can be added
+    \item Expanded storage pods for increased capacity
+\end{itemize}
+
+\subsection{Safety \& Redundancy Systems}
+
+\subsubsection{Power Management}
+\begin{itemize}
+    \item Multiple grid feeds with automatic failover
+    \item Redundant power distribution to critical systems
+    \item Emergency power reserves for life support systems
+\end{itemize}
+
+\subsubsection{Temperature Control}
+\begin{itemize}
+    \item Thermal alarms and monitoring systems
+    \item Interlocked access controls for high-temperature zones
+    \item Emergency cooling systems for overheating scenarios
+\end{itemize}
+
+\subsubsection{Environmental Protection}
+\begin{itemize}
+    \item HEPA and activated carbon filtration redundancy
+    \item Continuous particulate monitoring
+    \item Emergency ventilation and purge systems
+\end{itemize}
+
+\subsubsection{Fire Safety}
+\begin{itemize}
+    \item CO\textsubscript{2} suppression systems for metal or electrical fires
+    \item Fire detection and alarm systems throughout habitat
+    \item Emergency evacuation protocols and safe zones
+\end{itemize}
+
+\subsubsection{Automation \& Monitoring}
+\begin{itemize}
+    \item System alerts crew for anomalies requiring intervention
+    \item Minimal crew involvement in routine operations
+    \item Remote monitoring capability from main habitat
+\end{itemize}
+
+\subsubsection{Maintenance Protocols}
+\begin{itemize}
+    \item Robotic module swaps to minimize downtime
+    \item Regular inspection schedules
+    \item Predictive maintenance based on operational data
+\end{itemize}
+
+\subsection{Future-Ready Features}
+
+\subsubsection{Modular Expansion Capability}
+\begin{itemize}
+    \item Prewired docking rings for new MHRMS modules
+    \item Accommodation for future rover types and technologies
+    \item Scalable power and environmental interfaces
+\end{itemize}
+
+\subsubsection{Advanced Manufacturing Integration}
+\begin{itemize}
+    \item Support for multi-material 3D printers
+    \item Capability for biocomposites processing
+    \item Integration of regolith-based ceramics and glass manufacturing
+\end{itemize}
+
+\subsubsection{Robotic Autonomy Enhancement}
+\begin{itemize}
+    \item Future AI systems for full material flow management
+    \item Autonomous decision-making for operational optimization
+    \item Reduced dependency on crew oversight
+\end{itemize}
+
+\subsubsection{Distributed Manufacturing}
+\begin{itemize}
+    \item Mobile MHRMS pods deployable across Mars surface
+    \item Satellite manufacturing outposts
+    \item Emergency repair capabilities at remote sites
+\end{itemize}
+
+\subsubsection{Colony Scale Integration}
+\begin{itemize}
+    \item Habitat clusters connected via modular corridors
+    \item Large-scale Mars settlement infrastructure
+    \item Industrial-scale recycling and manufacturing capabilities
+\end{itemize}
+
+\subsection{Summary}
+
+The Advanced Modular Mars MHRMS Habitat represents a comprehensive solution for sustainable operations on Mars, characterized by:
+
+\begin{itemize}
+    \item \textbf{Dedicated Focus:} Fully optimized for MHRMS processing and rover fleet operations
+    \item \textbf{Future-Ready Design:} Modular, expandable, and adaptable to emerging technologies
+    \item \textbf{Safe \& Efficient Operations:} Closed-loop environmental systems with minimal crew involvement
+    \item \textbf{Scalable Architecture:} Capable of growth with additional modules, rovers, and advanced manufacturing systems
+    \item \textbf{Full Integration:} Seamless material flow from collection through processing to manufacturing and storage
+\end{itemize}
+
+\section{Conclusion}
+
+This integrated recycling-to-manufacturing system transforms Mars habitat waste—including fabrics, food packaging, foam, EVA materials, aluminum structures, and carbon from CO2 extraction—into valuable 3D printing feedstock and finished products. The modular design is powered by the habitat's electrical grid and optimized for Mars conditions while maintaining crew safety and environmental responsibility.
+
+\textbf{Key Innovation:} Leveraging Mars's unique environment (thin atmosphere, low pressure) as advantages rather than obstacles, while processing a comprehensive range of waste materials into useful end products.
+
+\textbf{Mission Impact:} Enables long-duration Mars missions by creating a closed-loop resource economy, reducing Earth dependency, and providing on-demand manufacturing capability for tools, utensils, storage containers, interior habitat outfitting, and habitat expansion.
+
+\textbf{Ready for Development:} All core technologies proven; integration and Mars-specific optimization required before deployment.
 
 \section*{Works Cited}
 \begin{itemize}
-    \item NASA Mars Facts: \\ \url{https://science.nasa.gov/mars/facts/}
-    \item NASA Trash-to-Gas and Trash-to-Supply Gas research: \\ \url{https://ntrs.nasa.gov/api/citations/20130011661/downloads/20130011661.pdf}
-    \item MGS-1 Mars Global Simulant \\ \url{https://sciences.ucf.edu/class/simulant_marsglobal/}
+    \item NASA Mars Facts: \url{https://science.nasa.gov/mars/facts/}
+    \item NASA Trash-to-Gas and Trash-to-Supply Gas research: \url{https://ntrs.nasa.gov/api/citations/20130011661/downloads/20130011661.pdf}
+    \item MGS-1 Mars Global Simulant: \url{https://sciences.ucf.edu/class/simulant_marsglobal/}
 \end{itemize}
 
 \end{document}
