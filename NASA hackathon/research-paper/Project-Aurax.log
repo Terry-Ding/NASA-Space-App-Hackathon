@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.5)  5 OCT 2025 11:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.5)  5 OCT 2025 12:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -262,44 +262,52 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip54
 \backup@length=\skip55
 \ar@cellbox=\box54
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip56
+\enit@outerparindent=\dimen179
+\enit@toks=\toks27
+\enit@inbox=\box55
+\enit@count@id=\count293
+\enitdp@description=\count294
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count293
-\l__pdf_internal_box=\box55
+\l__color_backend_stack_int=\count295
+\l__pdf_internal_box=\box56
 ) (./Project-Aurax.aux)
 \openout1 = `Project-Aurax.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
  (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count294
-\scratchdimen=\dimen179
-\scratchbox=\box56
-\nofMPsegments=\count295
-\nofMParguments=\count296
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count297
-\MPscratchDim=\dimen180
-\MPnumerator=\count298
-\makeMPintoPDFobject=\count299
-\everyMPtoPDFconversion=\toks28
+\scratchcounter=\count296
+\scratchdimen=\dimen180
+\scratchbox=\box57
+\nofMPsegments=\count297
+\nofMParguments=\count298
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count299
+\MPscratchDim=\dimen181
+\MPnumerator=\count300
+\makeMPintoPDFobject=\count301
+\everyMPtoPDFconversion=\toks29
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -340,49 +348,79 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 22.
+Package hyperref Info: Link coloring OFF on input line 23.
 (./Project-Aurax.out) (./Project-Aurax.out)
 \@outlinefile=\write3
 \openout3 = `Project-Aurax.out'.
 
 
-Underfull \hbox (badness 7116) in paragraph at lines 46--46
+Underfull \hbox (badness 7116) in paragraph at lines 47--47
 []|\OT1/cmr/m/n/12 Must min-i-mize the
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 47--47
+Underfull \hbox (badness 1661) in paragraph at lines 48--48
 \OT1/cmr/m/n/12 no more than eight
  []
 
 
-Overfull \hbox (2.70044pt too wide) in paragraph at lines 40--50
+Overfull \hbox (2.70044pt too wide) in paragraph at lines 41--51
  [][] 
  []
 
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2] [3] [4] [5] [6] (./Project-Aurax.aux)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \hbox (52.23985pt too wide) in paragraph at lines 63--63
+[]\OT1/cmr/bx/n/17.28 Our So-lu-tion: Mars Habi-tat Recycling-to-Manufacturing
+ []
+
+[2] [3] [4]
+Overfull \hbox (16.7708pt too wide) in paragraph at lines 229--230
+[]\OT1/cmr/bx/n/12 Option C: Full Pro-cess-ing to High-Quality Pro-pel-lants (REC-OM-MENDED) 
+ []
+
+
+Overfull \hbox (6.95662pt too wide) in paragraph at lines 231--233
+[]\OT1/cmr/m/n/12 NASA's "Trash-to-Supply Gas" (TtSG) - Our Base-line: Com-plete pro-cess-ing through
+ []
+
+[5] [6] [7] [8] [9] [10] [11] [12]
+Overfull \hbox (17.99806pt too wide) in paragraph at lines 590--591
+[]\OT1/cmr/m/n/12 Enhanced Ma-te-rial Li-brary: Ce-ram-ics from re-golith, glass from sil-i-cates, bio-composites 
+ []
+
+[13]
+Overfull \hbox (18.13277pt too wide) in paragraph at lines 619--620
+\OT1/cmr/m/n/12 This in-te-grated recycling-to-manufacturing sys-tem trans-forms Mars habi-tat waste|including
+ []
+
+[14]
+Overfull \hbox (8.65701pt too wide) in paragraph at lines 630--631
+[]$\OT1/cmtt/m/n/12 https : / / ntrs . nasa . gov / api / citations / 20130011661 / downloads / 20130011661 .
+ []
+
+[15] (./Project-Aurax.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `Project-Aurax.out' has not changed.
-(rerunfilecheck)             Checksum: 0AE32D093AE4E3C2FA76122D5E2BDC5B;1518.
+(rerunfilecheck)             Checksum: 02DCAE5B8D10AFCCC6711B13B93D94A3;10015.
  ) 
 Here is how much of TeX's memory you used:
- 9738 strings out of 474116
- 149973 string characters out of 5743683
+ 10180 strings out of 474116
+ 157102 string characters out of 5743683
  1937187 words of memory out of 5000000
- 31940 multiletter control sequences out of 15000+600000
- 565694 words of font info for 62 fonts, out of 8000000 for 9000
+ 32311 multiletter control sequences out of 15000+600000
+ 565863 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,397b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on Project-Aurax.pdf (6 pages, 77362 bytes).
+ 75i,10n,79p,554b,667s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
+Output written on Project-Aurax.pdf (15 pages, 125134 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
- 53 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 419 PDF objects out of 1000 (max. 8388607)
+ 380 compressed objects within 4 object streams
+ 119 named destinations out of 1000 (max. 500000)
+ 441 words of extra memory for PDF output out of 10000 (max. 10000000)
 
