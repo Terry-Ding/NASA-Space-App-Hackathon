@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.5)  5 OCT 2025 13:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.5)  5 OCT 2025 13:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -547,31 +547,96 @@ Overfull \hbox (18.13277pt too wide) in paragraph at lines 1625--1626
  []
 
 
-Overfull \hbox (48.86784pt too wide) in paragraph at lines 1637--1638
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1652
+[]|\OT1/cmr/m/n/10.95 Carbon Pro-cess-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1654--1654
+[]|\OT1/cmr/m/n/10.95 Polymer Re-cy-cling
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1654--1654
+[]|\OT1/cmr/m/n/10.95 PE/PP fil-a-ment, EVA blends,
+ []
+
+
+Underfull \hbox (badness 2293) in paragraph at lines 1654--1654
+\OT1/cmr/m/n/10.95 polyester/nylon fil-a-ments, mixed-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1656--1656
+[]|\OT1/cmr/m/n/10.95 Metal Pro-cess-ing
+ []
+
+
+Underfull \hbox (badness 6893) in paragraph at lines 1658--1658
+[]|\OT1/cmr/m/n/10.95 Transforms re-cy-cled ma-te-ri-als
+ []
+
+
+Overfull \hbox (25.35712pt too wide) in paragraph at lines 1648--1661
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 1717--1718
+[]|\OT1/cmr/m/n/10.95 Supports 8-person crew
+ []
+
+
+Underfull \hbox (badness 1342) in paragraph at lines 1720--1721
+[]|\OT1/cmr/m/n/10.95 Transport-efficient mod-u-lar
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1721--1722
+[]|\OT1/cmr/m/n/10.95 Compatible with habi-tat
+ []
+
+
+Overfull \hbox (37.3502pt too wide) in paragraph at lines 1713--1725
+ [][] 
+ []
+
+[39] [40]
+Overfull \hbox (48.86784pt too wide) in paragraph at lines 1793--1794
 []\OT1/cmr/m/n/12 MGS-1 Mars Global Sim-u-lant: []$\OT1/cmtt/m/n/12 https : / / sciences . ucf . edu / class / simulant _ marsglobal/$[] 
  []
 
-[37] (./ProjectAurax.aux)
+[41] (./ProjectAurax.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `ProjectAurax.out' has not changed.
-(rerunfilecheck)             Checksum: 67720BD42B066B99B9E4AC25E3E225CA;35630.
+
+
+Package rerunfilecheck Warning: File `ProjectAurax.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ProjectAurax.out':
+(rerunfilecheck)             Before: 67720BD42B066B99B9E4AC25E3E225CA;35630
+(rerunfilecheck)             After:  D948D43F5F5D3A308B8D934E908ED765;38713.
  ) 
 Here is how much of TeX's memory you used:
- 11869 strings out of 474116
- 189313 string characters out of 5743683
+ 11892 strings out of 474116
+ 189656 string characters out of 5743683
  1941187 words of memory out of 5000000
  33832 multiletter control sequences out of 15000+600000
  567311 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,14n,79p,602b,667s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on ProjectAurax.pdf (37 pages, 643585 bytes).
+Output written on ProjectAurax.pdf (41 pages, 653879 bytes).
 PDF statistics:
- 1083 PDF objects out of 1200 (max. 8388607)
- 1009 compressed objects within 11 object streams
- 276 named destinations out of 1000 (max. 500000)
+ 1123 PDF objects out of 1200 (max. 8388607)
+ 1045 compressed objects within 11 object streams
+ 299 named destinations out of 1000 (max. 500000)
  1475 words of extra memory for PDF output out of 10000 (max. 10000000)
 
